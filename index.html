@@ -1551,6 +1551,10 @@
                                                     <option value"RACE MAX PRO">RACE MAX PRO </option>
                                                     <option value"BATMAN">BATMAN </option>
                                                     <option value"SPIDERMAN">SPIDERMAN </option>
+       
+<option value"RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
+
+<option value"DEAD EFFECT">DEAD EFFECT </option>                                             
                                                     
                                                     
                                                    
@@ -2952,6 +2956,52 @@
        
     </div>
 </div>
+
+<!-- Game Card: FIFA 16 MOD EFOOTBALL 2026 -->
+<div class="game-card" data-category="free" data-game="RESIDENT EVIL MOD APK">
+    <div class="game-badge badge-free">Free</div>
+    <img src="evil.jpeg" alt="RESIDENT EVIL MOD APK" class="game-image">
+    <div class="game-info">
+        <h3 class="game-title">RESIDENT EVIL MOD APK</h3>
+        <p class="game-description">THE best ACTION GAME</p>
+        
+        <div class="game-meta">
+            <div class="game-rating">
+                <i class="fas fa-star"></i>
+                <span>4.6</span>
+            </div>
+            <div>Size:</div>
+        </div>
+        
+        <!-- Primary Download Button -->
+        <a href="https://files.an1.net/resident-evil-4-mod_1.0-an1.com.apk" class="download-btn">
+            <i class="fas fa-download"></i> Download Apk 
+        </a>
+    </div>
+</div> 
+
+<!-- Game Card: FIFA 16 MOD EFOOTBALL 2026 -->
+<div class="game-card" data-category="free" data-game="DEAD EFFECT">
+    <div class="game-badge badge-free">Free</div>
+    <img src="dead effect.jpeg" alt="DEAD EFFECT" class="game-image">
+    <div class="game-info">
+        <h3 class="game-title">DEAD EFFECT </h3>
+        <p class="game-description">THE best ACTION GAME and story game</p>
+        
+        <div class="game-meta">
+            <div class="game-rating">
+                <i class="fas fa-star"></i>
+                <span>4.6</span>
+            </div>
+            <div>Size:</div>
+        </div>
+        
+        <!-- Primary Download Button -->
+        <a href="https://www.mediafire.com/file/au5kfa97dlo81mj/DEAD-EFFECT2-MOD-APK+DATA-2022.zip/file" class="download-btn">
+            <i class="fas fa-download"></i> Download Apk 
+        </a>
+    </div>
+</div> 
         
 
     </section>
@@ -3453,322 +3503,4 @@
         style.textContent = `
             @keyframes pulse {
                 0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Enhanced notification for game actions
-        document.querySelectorAll('.download-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const gameCard = this.closest('.game-card');
-                const gameName = gameCard.getAttribute('data-game');
-                
-                showNotification(`Starting download: ${gameName} ⬇️`);
-                addXP(5);
-                
-                // Animate the download button
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-            });
-        });
-
-        // ========== ENHANCED GAME DIRECT ACCESS VIA URL ==========
-        function setupGameDirectAccess() {
-            // Get game parameter from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const gameId = urlParams.get('game');
-            
-            if (gameId) {
-                // Decode the game name
-                const decodedGameId = decodeURIComponent(gameId);
-                
-                // Find the game card with matching data-game attribute
-                const gameCards = document.querySelectorAll('.game-card');
-                let foundGame = null;
-                
-                gameCards.forEach(card => {
-                    const cardGameName = card.getAttribute('data-game').toLowerCase();
-                    const searchGameName = decodedGameId.toLowerCase();
-                    
-                    // Try exact match first
-                    if (cardGameName === searchGameName) {
-                        foundGame = card;
-                    }
-                    // Try partial match
-                    else if (cardGameName.includes(searchGameName) || searchGameName.includes(cardGameName)) {
-                        foundGame = card;
-                    }
-                });
-                
-                if (foundGame) {
-                    // Show the game (in case filters are hiding it)
-                    foundGame.style.display = 'block';
-                    
-                    // Set all filters to "All" to show the game
-                    document.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    document.querySelector('[data-filter="all"]').classList.add('active');
-                    
-                    // Show all games temporarily
-                    gameCards.forEach(card => {
-                        card.style.display = 'block';
-                    });
-                    
-                    // Wait for layout to update, then scroll
-                    setTimeout(() => {
-                        foundGame.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        // Add highlight effect
-                        const originalBoxShadow = foundGame.style.boxShadow;
-                        const originalBorder = foundGame.style.border;
-                        
-                        foundGame.style.boxShadow = '0 0 40px rgba(108, 92, 231, 0.9)';
-                        foundGame.style.border = '3px solid #6c5ce7';
-                        foundGame.style.zIndex = '100';
-                        
-                        // Pulsating animation
-                        let pulseCount = 0;
-                        const pulseInterval = setInterval(() => {
-                            foundGame.style.transform = pulseCount % 2 === 0 ? 'scale(1.05)' : 'scale(1)';
-                            pulseCount++;
-                            
-                            if (pulseCount > 8) {
-                                clearInterval(pulseInterval);
-                                foundGame.style.transform = 'scale(1)';
-                                
-                                // Remove highlight after animation
-                                setTimeout(() => {
-                                    foundGame.style.boxShadow = originalBoxShadow;
-                                    foundGame.style.border = originalBorder;
-                                    foundGame.style.zIndex = '';
-                                }, 3000);
-                            }
-                        }, 400);
-                        
-                        // Show game title in notification
-                        const gameTitle = foundGame.querySelector('.game-title').textContent;
-                        showNotification(`🎮 Direct access to: ${gameTitle}`);
-                        
-                    }, 800);
-                } else {
-                    showNotification(`Game "${decodedGameId}" not found. Showing all games.`);
-                }
-            }
-        }
-
-        // ========== WHATSAPP DIRECT LINK GENERATOR ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            const gameSelector = document.getElementById('game-selector');
-            const generateBtn = document.getElementById('generate-link');
-            const generatedLinkContainer = document.getElementById('generated-link-container');
-            const generatedLinkInput = document.getElementById('generated-link');
-            const copyBtn = document.getElementById('copy-link');
-            const shareWhatsappBtn = document.getElementById('share-whatsapp');
-            const messagePreview = document.getElementById('whatsapp-message-preview');
-            const messageContent = document.getElementById('message-content');
-            
-            // Generate link when button is clicked
-            generateBtn.addEventListener('click', function() {
-                const selectedGame = gameSelector.value;
-                
-                if (!selectedGame) {
-                    showNotification('Please select a game first!');
-                    return;
-                }
-                
-                // Get the current website URL
-                const baseUrl = window.location.origin + window.location.pathname;
-                
-                // Create the direct link with game parameter
-                const directLink = `${baseUrl}?game=${encodeURIComponent(selectedGame)}`;
-                
-                // Display the link
-                generatedLinkInput.value = directLink;
-                generatedLinkContainer.style.display = 'block';
-                
-                // Generate WhatsApp message
-                const gameCards = document.querySelectorAll('.game-card');
-                let gameDescription = '';
-                
-                gameCards.forEach(card => {
-                    if (card.getAttribute('data-game') === selectedGame) {
-                        const descElement = card.querySelector('.game-description');
-                        if (descElement) {
-                            gameDescription = descElement.textContent;
-                        }
-                    }
-                });
-                
-                const whatsappMessage = `🎮 *${selectedGame}* 🎮\n\n${gameDescription}\n\n👇 Download now:\n${directLink}\n\n📱 From Games-Store`;
-                
-                // Update message preview
-                messageContent.textContent = whatsappMessage;
-                messagePreview.style.display = 'block';
-                
-                // Scroll to the generator
-                generatedLinkContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                showNotification(`✅ Link generated for ${selectedGame}`);
-            });
-            
-            // Copy link to clipboard
-            copyBtn.addEventListener('click', function() {
-                generatedLinkInput.select();
-                document.execCommand('copy');
-                
-                // Visual feedback
-                const originalText = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                copyBtn.style.background = '#00b894';
-                
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                    copyBtn.style.background = '#6c5ce7';
-                }, 2000);
-                
-                showNotification('Link copied to clipboard! 📋');
-            });
-            
-            // Share to WhatsApp
-            shareWhatsappBtn.addEventListener('click', function() {
-                const message = messageContent.textContent;
-                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
-            });
-            
-            // Auto-detect game from URL and select it in dropdown
-            const urlParams = new URLSearchParams(window.location.search);
-            const gameFromUrl = urlParams.get('game');
-            
-            if (gameFromUrl) {
-                // Try to find and select the game in dropdown
-                for (let i = 0; i < gameSelector.options.length; i++) {
-                    if (gameSelector.options[i].value.toLowerCase() === gameFromUrl.toLowerCase()) {
-                        gameSelector.value = gameSelector.options[i].value;
-                        break;
-                    }
-                }
-            }
-        });
-
-        // ========== EXISTING FUNCTIONALITY ==========
-        // Navigation between Home and About Us pages
-        document.getElementById('about-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('games-section').style.display = 'none';
-            document.getElementById('about-page').style.display = 'block';
-            window.scrollTo(0, 0);
-        });
-
-        document.getElementById('home-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('games-section').style.display = 'block';
-            document.getElementById('about-page').style.display = 'none';
-            window.scrollTo(0, 0);
-        });
-
-        document.getElementById('back-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('games-section').style.display = 'block';
-            document.getElementById('about-page').style.display = 'none';
-            window.scrollTo(0, 0);
-        });
-
-        // Filter games by category
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const gameCards = document.querySelectorAll('.game-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Show/hide game cards based on filter
-                    gameCards.forEach(card => {
-                        if (filterValue === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            if (card.getAttribute('data-category') === filterValue) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                    
-                    // Add XP for filtering
-                    addXP(5);
-                });
-            });
-            
-            // Game search functionality
-            const searchInput = document.getElementById('game-search');
-            const searchButton = document.getElementById('search-button');
-            
-            searchButton.addEventListener('click', function() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                
-                if (searchTerm) {
-                    gameCards.forEach(card => {
-                        const gameName = card.getAttribute('data-game').toLowerCase();
-                        if (gameName.includes(searchTerm)) {
-                            card.style.display = 'block';
-                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                    
-                    // Reset filter buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelector('[data-filter="all"]').classList.add('active');
-                    
-                    // Add XP for searching
-                    addXP(3);
-                }
-            });
-            
-            // Trending items click functionality
-            const trendingItems = document.querySelectorAll('.trending-item');
-            trendingItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const gameName = this.getAttribute('data-game');
-                    searchInput.value = gameName;
-                    
-                    // Trigger search
-                    gameCards.forEach(card => {
-                        const cardGameName = card.getAttribute('data-game');
-                        if (cardGameName === gameName) {
-                            card.style.display = 'block';
-                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                    
-                    // Reset filter buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelector('[data-filter="all"]').classList.add('active');
-                    
-                    // Add XP for clicking trending
-                    addXP(2);
-                });
-            });
-
-            // Initialize game direct access
-            setupGameDirectAccess();
-        });
-    </script>
-</body>
-</html>
+   
