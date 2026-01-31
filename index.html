@@ -485,6 +485,12 @@
             color: white;
             box-shadow: 0 4px 10px rgba(0, 184, 148, 0.4);
         }
+
+        .badge-collection {
+            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+            color: white;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+        }
        
         .game-image {
             width: 100%;
@@ -771,6 +777,100 @@
 
         .usage-guide li {
             margin-bottom: 0.5rem;
+        }
+
+        /* All Games Collection Styles */
+        .all-games-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(15, 20, 25, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .all-games-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .all-games-list::-webkit-scrollbar-track {
+            background: rgba(26, 31, 46, 0.5);
+            border-radius: 4px;
+        }
+
+        .all-games-list::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+            border-radius: 4px;
+        }
+
+        .all-games-list::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(90deg, #5b4bc4, #8a7ff0);
+        }
+
+        .game-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: rgba(26, 31, 46, 0.7);
+            border-radius: 8px;
+            border-left: 4px solid #6c5ce7;
+            transition: all 0.3s;
+        }
+
+        .game-item:hover {
+            background: rgba(108, 92, 231, 0.15);
+            transform: translateX(5px);
+        }
+
+        .game-item-name {
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        body.light-mode .game-item-name {
+            color: #333;
+        }
+
+        .game-item-category {
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: rgba(108, 92, 231, 0.2);
+            color: #a29bfe;
+        }
+
+        .game-item-premium {
+            background: rgba(255, 107, 0, 0.2);
+            color: #ff9a00;
+        }
+
+        .collection-stats {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(108, 92, 231, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6c5ce7;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b0b0b0;
         }
 
         /* Existing styles below... */
@@ -1371,6 +1471,11 @@
                 border-radius: 30px;
                 padding: 10px 20px;
             }
+
+            .collection-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -1546,19 +1651,19 @@
                                                     <option value="Once a Human">Once a Human</option>
                                                     <option value="battleops ">battleops</option>
                                                     <option value="EFOOTBALL 2026">EFOOTBALL 2026 </option>
-                                                    <option value"FIFA 2025 MOD 14">FIFA 2025 MOD 14 </option>
-                                                    <option value"RALLY RACING PRO">RALLY RACING PRO </option>
-                                                    <option value"RACE MAX PRO">RACE MAX PRO </option>
-                                                    <option value"BATMAN">BATMAN </option>
-                                                    <option value"SPIDERMAN">SPIDERMAN </option>
+                                                    <option value="FIFA 2025 MOD 14">FIFA 2025 MOD 14 </option>
+                                                    <option value="RALLY RACING PRO">RALLY RACING PRO </option>
+                                                    <option value="RACE MAX PRO">RACE MAX PRO </option>
+                                                    <option value="BATMAN">BATMAN </option>
+                                                    <option value="SPIDERMAN">SPIDERMAN </option>
        
-<option value"RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
+<option value="RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
 
-<option value"DEAD EFFECT">DEAD EFFECT </option>
+<option value="DEAD EFFECT">DEAD EFFECT </option>
 
-<option value"Hitman Sniper">Hitman Sniper</option> 
+<option value="Hitman Sniper">Hitman Sniper</option> 
 
-<option value"Truck Simulator">Truck Simulator </option>                                            
+<option value="Truck Simulator">Truck Simulator </option>                                            
                     </select>
                     <button id="generate-link">
                         Generate Link
@@ -1613,6 +1718,48 @@
         </div>
         
         <div class="games-grid">
+            <!-- ========== ALL GAMES COLLECTION CARD ========== -->
+            <div class="game-card" data-category="free" data-game="All Games Collection">
+                <div class="game-badge badge-collection">Collection</div>
+                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="All Games Collection" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">All Games Collection</h3>
+                    <p class="game-description">Complete collection of all 50+ games available on our platform. Browse, filter, and find your next favorite game!</p>
+                    
+                    <div class="collection-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Total Games</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">45+</span>
+                            <span class="stat-label">Free Games</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Premium Games</span>
+                        </div>
+                    </div>
+                    
+                    <div class="all-games-list" id="all-games-list">
+                        <!-- Games will be dynamically added here -->
+                    </div>
+                    
+                    <a href="javascript:void(0)" class="download-btn" id="view-all-games">
+                        <i class="fas fa-list"></i> Browse All Games
+                    </a>
+                    
+                    <a href="javascript:void(0)" class="download-btn" id="filter-free-games">
+                        <i class="fas fa-gift"></i> View Free Games Only
+                    </a>
+                    
+                    <a href="javascript:void(0)" class="download-btn" id="filter-premium-games">
+                        <i class="fas fa-crown"></i> View Premium Games Only
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========== ORIGINAL GAME CARDS ========== -->
             <!-- Game Card 1 - Premium -->
             <div class="game-card" data-category="premium" data-game="GTA V Mod San Andreas">
                 <div class="game-badge badge-premium">Premium</div>
@@ -2944,9 +3091,10 @@
                     </a>
                 </div>
             </div>
+            
             <!-- Game Card: battleops -->
             <div class="game-card" data-category="free" data-game="Truck Simulator ">
-                <div class="game-badge badge-free">PC GAME</div>
+                <div class="game-badge badge-free">Truck Simulator </div>
                 <img src="truck.jpeg" alt="Truck Simulator" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Truck Simulator</h3>
@@ -2957,10 +3105,35 @@
                             <i class="fas fa-star"></i>
                             <span>4.6</span>
                         </div>
-                        <div></div>
+                   </div>
+                        </div>
                     </div>
                     
                     <a href="https://www.mediafire.com/file/gduwnc7z34ziynw/American_Truck_Simulator_Opti.7z/file?dkey=20a5188rrju&r=844" class="download-btn">
+                        <i class="fas fa-download"></i> Download Apk 
+                    </a>
+                </div>
+            </div>
+         </div>
+      </div>
+             <!-- Game Card: battleops -->
+            <div class="game-card" data-category="free" data-game="WWE PATCH 2026 PSP ">
+                <div class="game-badge badge-free">WWE PATCH 2026 PSP</div>
+                <img src="wwe patch.jpeg" alt="WWE PATCH 2026" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">WWE PATCH 2026</h3>
+                    <p class="game-description"></p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                   </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.mediafire.com/file/cnojs7lrthl1ukb/MY_NEW_WWE_2K26_PATCH_MOD_BY_LETSKI_MODDER.zip/file?dkey=wl4jd7u9ewl&r=67" class="download-btn">
                         <i class="fas fa-download"></i> Download Apk 
                     </a>
                 </div>
@@ -3002,7 +3175,33 @@
                 </div>
             </div>
             
-            NOTE: KAMA UME DOWNLOAD GAME ALAF LINAHITAJI PIN TUTAFUTE KWENY NAMBA 0742838904 Au BONYEZA HELP CENTER
+            <a href="#" class="back-btn" id="back-home">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://whatsapp.com/channel/0029VbBxz643gvWXQuztjf3C" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#games-section">Games</a>
+                <a href="#about-page">About Us</a>
+                <a href="tel:0742838904">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            
+            <div class="help-note">
+                <i class="fas fa-info-circle"></i>
+                NOTE: KAMA UME DOWNLOAD GAME ALAF LINAHITAJI PIN TUTAFUTE KWENY NAMBA 0742838904 Au BONYEZA HELP CENTER
             </div>
             <p class="copyright">© 2025 Chanyo Games-Store. All rights reserved.</p>
         </div>
@@ -3062,7 +3261,7 @@
 
     <!-- Floating Controls -->
     <div class="floating-controls">
-        <button class="control-btn assistant" id="assistant-btn" title="Game Assistant">
+        <button class="control-btn assistant" id="assistant-btn" title="Game "Game Assistant">
             <i class="fas fa-robot"></i>
         </button>
         <button class="control-btn" id="theme-btn" title="Toggle Dark/Light Mode">
@@ -3151,7 +3350,7 @@
                 }
             }
         };
-particlesJS.load('particles-js', '', particlesConfig);
+        particlesJS.load('particles-js', '', particlesConfig);
 
         // 4. Floating Game Icons
         function createFloatingIcons() {
@@ -3222,7 +3421,7 @@ particlesJS.load('particles-js', '', particlesConfig);
         const trendingAction = document.getElementById('trending-action');
 
         assistantBtn.addEventListener('click', () => {
-            gameAssistant.classList.add('show');
+            gameAssistant.classList.toggle('show');
         });
 
         closeAssistant.addEventListener('click', () => {
@@ -3230,52 +3429,21 @@ particlesJS.load('particles-js', '', particlesConfig);
         });
 
         recommendAction.addEventListener('click', () => {
-            const games = ['GTA V Mod San Andreas', 'UFL', 'Call Of Duty', 'DFL'];
-            const randomGame = games[Math.floor(Math.random() * games.length)];
-            document.getElementById('assistant-message').innerHTML = 
-                `Based on your gaming history, I recommend <strong>${randomGame}</strong>! 🎮<br><br>
-                This game matches your preferences for action and adventure.`;
-            
-            addXP(5);
-            showNotification('Game recommendation generated! +5 XP');
+            document.querySelector('.assistant-message').textContent = 
+                "Based on your gaming history, I recommend trying GTA V Mod San Andreas for open-world action or UFL for sports!";
+            showNotification('Game recommendations updated! 🎮');
         });
 
         trendingAction.addEventListener('click', () => {
-            document.getElementById('assistant-message').innerHTML = 
-                `🔥 Trending right now:<br><br>
-                1. <strong>GTA V Mod San Andreas</strong> - Most downloaded<br>
-                2. <strong>UFL</strong> - Best football graphics<br>
-                3. <strong>Call Of Duty</strong> - Highest rated action game`;
-            
-            addXP(3);
-            showNotification('Trending games loaded! +3 XP');
-        });
-
-        // Click on recommendation items
-        document.querySelectorAll('.recommendation-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const gameName = this.getAttribute('data-game');
-                showNotification(`Navigating to ${gameName}...`);
-                
-                // Scroll to game
-                const gameCard = document.querySelector(`[data-game="${gameName}"]`);
-                if (gameCard) {
-                    gameCard.scrollIntoView({ behavior: 'smooth' });
-                    gameCard.style.animation = 'pulse 1s';
-                    setTimeout(() => {
-                        gameCard.style.animation = '';
-                    }, 1000);
-                }
-                
-                addXP(2);
-                gameAssistant.classList.remove('show');
-            });
+            document.querySelector('.assistant-message').textContent = 
+                "Currently trending: GTA V Mod San Andreas, UFL Football, and Call Of Duty are our most downloaded games this week!";
+            showNotification('Trending games loaded! 🔥');
         });
 
         // 8. Back to Top Button
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
+            if (window.scrollY > 300) {
                 backToTop.classList.add('show');
             } else {
                 backToTop.classList.remove('show');
@@ -3284,10 +3452,47 @@ particlesJS.load('particles-js', '', particlesConfig);
 
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            addXP(1);
         });
 
-        // 9. Game Filtering
+        // 9. Search Functionality
+        const searchButton = document.getElementById('search-button');
+        const gameSearch = document.getElementById('game-search');
+
+        searchButton.addEventListener('click', () => {
+            const searchTerm = gameSearch.value.toLowerCase().trim();
+            if (!searchTerm) {
+                showNotification('Please enter a game name to search!');
+                return;
+            }
+
+            const gameCards = document.querySelectorAll('.game-card');
+            let found = false;
+            
+            gameCards.forEach(card => {
+                const gameName = card.getAttribute('data-game').toLowerCase();
+                if (gameName.includes(searchTerm)) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.style.animation = 'pulse 0.5s';
+                    setTimeout(() => {
+                        card.style.animation = '';
+                    }, 500);
+                    found = true;
+                    showNotification(`Found game: ${card.getAttribute('data-game')} 🎯`);
+                }
+            });
+
+            if (!found) {
+                showNotification('No games found matching your search. Try a different term!');
+            }
+        });
+
+        gameSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchButton.click();
+            }
+        });
+
+        // 10. Game Filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
         const gameCards = document.querySelectorAll('.game-card');
 
@@ -3302,191 +3507,81 @@ particlesJS.load('particles-js', '', particlesConfig);
                 
                 gameCards.forEach(card => {
                     const category = card.getAttribute('data-category');
-                    
                     if (filter === 'all' || category === filter) {
                         card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
                     } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
+                        card.style.display = 'none';
                     }
                 });
                 
-                addXP(2);
+                showNotification(`Showing ${filter} games`);
             });
         });
 
-        // 10. Search Functionality
-        const gameSearch = document.getElementById('game-search');
-        const searchButton = document.getElementById('search-button');
-
-        function searchGames() {
-            const searchTerm = gameSearch.value.toLowerCase().trim();
-            
-            if (!searchTerm) {
-                showNotification('Please enter a search term');
-                return;
-            }
-            
-            let foundGames = 0;
-            
-            gameCards.forEach(card => {
-                const gameTitle = card.getAttribute('data-game').toLowerCase();
-                const cardTitle = card.querySelector('.game-title').textContent.toLowerCase();
-                
-                if (gameTitle.includes(searchTerm) || cardTitle.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 10);
-                    foundGames++;
-                    
-                    // Highlight the matching text
-                    const titleElement = card.querySelector('.game-title');
-                    const originalText = titleElement.textContent;
-                    const regex = new RegExp(`(${searchTerm})`, 'gi');
-                    titleElement.innerHTML = originalText.replace(regex, '<span style="color:#6c5ce7;background:rgba(108,92,231,0.1);padding:2px 5px;border-radius:3px;">$1</span>');
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-            
-            if (foundGames > 0) {
-                showNotification(`Found ${foundGames} game(s) matching "${searchTerm}"`);
-                addXP(3);
-            } else {
-                showNotification(`No games found matching "${searchTerm}"`);
-            }
-        }
-
-        searchButton.addEventListener('click', searchGames);
-        gameSearch.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                searchGames();
-            }
-        });
-
-        // 11. Trending Slider Hover Effect
-        const trendingItems = document.querySelectorAll('.trending-item');
-        trendingItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const gameName = this.getAttribute('data-game');
-                showNotification(`Opening ${gameName}...`);
-                
-                // Find and scroll to the game card
-                const gameCard = document.querySelector(`[data-game="${gameName}"]`);
-                if (gameCard) {
-                    gameCard.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Highlight the card
-                    gameCard.style.boxShadow = '0 0 30px rgba(108, 92, 231, 0.8)';
-                    setTimeout(() => {
-                        gameCard.style.boxShadow = '';
-                    }, 2000);
-                }
-                
-                addXP(2);
-            });
-        });
-
-        // 12. WhatsApp Direct Link Generator
-        const gameSelector = document.getElementById('game-selector');
+        // 11. WhatsApp Link Generator
         const generateLinkBtn = document.getElementById('generate-link');
+        const gameSelector = document.getElementById('game-selector');
         const generatedLinkContainer = document.getElementById('generated-link-container');
         const generatedLink = document.getElementById('generated-link');
         const copyLinkBtn = document.getElementById('copy-link');
         const shareWhatsappBtn = document.getElementById('share-whatsapp');
-        const messagePreview = document.getElementById('whatsapp-message-preview');
         const messageContent = document.getElementById('message-content');
+        const messagePreview = document.getElementById('whatsapp-message-preview');
 
         generateLinkBtn.addEventListener('click', () => {
             const selectedGame = gameSelector.value;
-            
             if (!selectedGame) {
-                showNotification('Please select a game first');
+                showNotification('Please select a game first!');
                 return;
             }
-            
-            // Create the direct link (in a real app, this would be a proper URL)
-            const baseUrl = window.location.origin + window.location.pathname;
-            const gameSlug = selectedGame.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const directLink = `${baseUrl}#game=${gameSlug}`;
-            
-            // Update the generated link
+
+            // Create direct link (simulate hash-based navigation)
+            const directLink = `${window.location.origin}${window.location.pathname}#game-${encodeURIComponent(selectedGame)}`;
             generatedLink.value = directLink;
             generatedLinkContainer.style.display = 'block';
             
             // Create WhatsApp message preview
-            const whatsappMessage = `🎮 *${selectedGame}* - Direct Download Link! 🎮
+            const whatsappMessage = `🎮 *${selectedGame}* 🎮
 
-Check out this awesome game available on Games-Store!
+Check out this awesome game from Games-Store!
 
-📱 *Download Link:* ${directLink}
+Download Link: ${directLink}
 
-🚀 Features:
-• High-quality graphics
-• Smooth gameplay
-• Regular updates
-• Free to play
+Features:
+✅ High-quality graphics
+✅ Smooth gameplay
+✅ Free to download
+✅ Regular updates
 
-👉 Tap the link above to go directly to the game download page!
+Download now and start playing! 🚀
 
-#GamesStore #${selectedGame.replace(/\s+/g, '')} #MobileGaming`;
-            
+#GamesStore #${selectedGame.replace(/\s+/g, '')} #Gaming`;
+
             messageContent.textContent = whatsappMessage;
             messagePreview.style.display = 'block';
             
-            // Scroll to the generated link section
-            generatedLinkContainer.scrollIntoView({ behavior: 'smooth' });
-            
-            addXP(5);
-            showNotification(`Direct link generated for ${selectedGame}! +5 XP`);
+            showNotification(`Link generated for ${selectedGame}! ✅`);
         });
 
         copyLinkBtn.addEventListener('click', () => {
             generatedLink.select();
             document.execCommand('copy');
-            
-            // Visual feedback
-            copyLinkBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyLinkBtn.style.background = '#00b894';
-            
-            setTimeout(() => {
-                copyLinkBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                copyLinkBtn.style.background = '';
-            }, 2000);
-            
-            addXP(2);
-            showNotification('Link copied to clipboard! +2 XP');
+            showNotification('Link copied to clipboard! 📋');
         });
 
         shareWhatsappBtn.addEventListener('click', () => {
-            const selectedGame = gameSelector.value;
-            const message = encodeURIComponent(messageContent.textContent);
-            const whatsappUrl = `https://wa.me/?text=${message}`;
-            
-            window.open(whatsappUrl, '_blank');
-            addXP(3);
-            showNotification('Opening WhatsApp... +3 XP');
+            const gameName = gameSelector.value;
+            const encodedMessage = encodeURIComponent(`Check out ${gameName} on Games-Store! 🎮\n\nDownload Link: ${generatedLink.value}\n\n#GamesStore`);
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
         });
 
-        // 13. Page Navigation
+        // 12. Home/About Navigation
         const homeLink = document.getElementById('home-link');
         const aboutLink = document.getElementById('about-link');
         const aboutPage = document.getElementById('about-page');
+        const backHome = document.getElementById('back-home');
         const gamesSection = document.getElementById('games-section');
-        const backBtn = document.getElementById('back-btn');
 
         homeLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -3500,74 +3595,203 @@ Check out this awesome game available on Games-Store!
             gamesSection.style.display = 'none';
             aboutPage.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            addXP(2);
         });
 
-        backBtn.addEventListener('click', (e) => {
+        backHome.addEventListener('click', (e) => {
             e.preventDefault();
             aboutPage.style.display = 'none';
             gamesSection.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 14. Animate game cards on load
-        window.addEventListener('load', () => {
-            const cards = document.querySelectorAll('.game-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.style.animationName = 'fadeInUp';
-            });
-            
-            // Show welcome notification
-            setTimeout(() => {
-                showNotification('Welcome to Games-Store! 🎮 Explore amazing games!');
-            }, 1000);
-            
-            addXP(10);
+        // 13. Trending Slider Animation
+        const trendingSlider = document.querySelector('.trending-slider');
+        let isPaused = false;
+
+        trendingSlider.addEventListener('mouseenter', () => {
+            isPaused = true;
+            trendingSlider.style.animationPlayState = 'paused';
         });
 
-        // 15. Download button animations
-        document.querySelectorAll('.download-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // Don't prevent default - allow actual download
-                addXP(10);
+        trendingSlider.addEventListener('mouseleave', () => {
+            isPaused = false;
+            trendingSlider.style.animationPlayState = 'running';
+        });
+
+        // 14. All Games Collection Feature
+        const allGamesList = document.getElementById('all-games-list');
+        const viewAllGamesBtn = document.getElementById('view-all-games');
+        const filterFreeGamesBtn = document.getElementById('filter-free-games');
+        const filterPremiumGamesBtn = document.getElementById('filter-premium-games');
+
+        // Collect all games from the page
+        function populateAllGamesList() {
+            const games = [];
+            
+            // Get all game cards except the collection card itself
+            document.querySelectorAll('.game-card:not([data-game="All Games Collection"])').forEach(card => {
+                const gameName = card.getAttribute('data-game');
+                const category = card.getAttribute('data-category');
+                const rating = card.querySelector('.game-rating span')?.textContent || '4.5';
                 
-                // Visual feedback
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
-                this.style.background = 'linear-gradient(90deg, #00b894, #00a085)';
-                
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.style.background = '';
-                    showNotification('Download started! Check your downloads folder. +10 XP');
-                }, 1500);
+                games.push({
+                    name: gameName,
+                    category: category,
+                    rating: rating
+                });
             });
+            
+            // Sort games alphabetically
+            games.sort((a, b) => a.name.localeCompare(b.name));
+            
+            // Populate the list
+            allGamesList.innerHTML = '';
+            games.forEach(game => {
+                const gameItem = document.createElement('div');
+                gameItem.className = 'game-item';
+                gameItem.innerHTML = `
+                    <span class="game-item-name">${game.name}</span>
+                    <span class="game-item-category ${game.category === 'premium' ? 'game-item-premium' : ''}">
+                        ${game.category === 'premium' ? 'Premium' : 'Free'}
+                    </span>
+                `;
+                
+                gameItem.addEventListener('click', () => {
+                    // Find and scroll to the game card
+                    const targetCard = document.querySelector(`.game-card[data-game="${game.name}"]`);
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        targetCard.style.animation = 'pulse 0.5s';
+                        setTimeout(() => {
+                            targetCard.style.animation = '';
+                        }, 500);
+                        showNotification(`Navigated to ${game.name} 🎯`);
+                    }
+                });
+                
+                allGamesList.appendChild(gameItem);
+            });
+        }
+
+        // Initialize the games list
+        populateAllGamesList();
+
+        // Collection card button functionality
+        viewAllGamesBtn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+            
+            document.querySelectorAll('.game-card').forEach(card => {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.5s ease forwards';
+            });
+            
+            showNotification('Showing all games! 🎮');
+            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
+        });
+
+        filterFreeGamesBtn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="free"]').classList.add('active');
+            
+            document.querySelectorAll('.game-card').forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (category === 'free') {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            showNotification('Showing free games only! 🎁');
+            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
+        });
+
+        filterPremiumGamesBtn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="premium"]').classList.add('active');
+            
+            document.querySelectorAll('.game-card').forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (category === 'premium') {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            showNotification('Showing premium games only! 👑');
+            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
+        });
+
+        // 15. Initialize game cards with staggered animations
+        document.querySelectorAll('.game-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
         });
 
         // 16. Contact number click
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                showNotification('Calling support... 📞');
-                addXP(2);
+            link.addEventListener('click', () => {
+                showNotification('Calling support: 0742838904 📞');
             });
         });
 
-        // 17. Initialize everything
-        updateXPBar();
-        updateLevelBadge();
+        // 17. Download button tracking
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const gameName = this.closest('.game-card')?.getAttribute('data-game') || 'Unknown Game';
+                addXP(5);
+                showNotification(`Starting download for ${gameName}... ⬇️`);
+                
+                // Track in localStorage
+                const downloads = JSON.parse(localStorage.getItem('gameDownloads') || '[]');
+                downloads.push({
+                    game: gameName,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('gameDownloads', JSON.stringify(downloads));
+            });
+        });
 
-        // Add pulse animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.6); }
-                50% { transform: scale(1.05); box-shadow: 0 15px 30px rgba(108, 92, 231, 0.6); }
-                100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.6); }
-            }
-        `;
-        document.head.appendChild(style);
+        // 18. Trending items click
+        document.querySelectorAll('.trending-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const gameName = this.getAttribute('data-game');
+                const targetCard = document.querySelector(`.game-card[data-game="${gameName}"]`);
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetCard.style.animation = 'pulse 0.5s';
+                    setTimeout(() => {
+                        targetCard.style.animation = '';
+                    }, 500);
+                    showNotification(`Navigated to ${gameName} 🔥`);
+                }
+            });
+        });
+
+        // 19. Game assistant recommendations
+        document.querySelectorAll('.recommendation-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const gameName = this.getAttribute('data-game');
+                const targetCard = document.querySelector(`.game-card[data-game="${gameName}"]`);
+                if (targetCard) {
+                    gameAssistant.classList.remove('show');
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetCard.style.animation = 'pulse 0.5s';
+                    setTimeout(() => {
+                        targetCard.style.animation = '';
+                    }, 500);
+                    showNotification(`Navigated to ${gameName} from assistant! 🤖`);
+                }
+            });
+        });
+
+        // 20. Initialize with welcome notification
+        setTimeout(() => {
+            showNotification('Welcome to Games-Store! Browse our collection of 50+ games! 🎮');
+        }, 1500);
     </script>
 </body>
-</html>
-        
+</html> 
