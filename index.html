@@ -751,126 +751,69 @@
             line-height: 1.5;
         }
 
-        .usage-guide {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: rgba(108, 92, 231, 0.1);
-            border-radius: 8px;
-        }
-
-        .usage-guide h4 {
-            color: #6c5ce7;
-            margin-bottom: 0.5rem;
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            animation: shake 2s infinite;
+            border: 3px solid white;
+            text-decoration: none;
         }
 
-        .usage-guide ol {
+        @keyframes shake {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            5% { transform: translateY(-50%) rotate(-5deg); }
+            10% { transform: translateY(-50%) rotate(5deg); }
+            15% { transform: translateY(-50%) rotate(-5deg); }
+            20% { transform: translateY(-50%) rotate(5deg); }
+            25% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(0deg); }
+        }
+
+        .whatsapp-icon:hover {
+            animation: none;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        /* All Games Collection Styles - REMOVED */
+
+        /* Enhanced Shiny Black Game Cards - FIXED STRUCTURE */
+        .game-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            min-height: 220px;
+        }
+
+        .game-description {
             color: #b0b0b0;
-            padding-left: 1.5rem;
-        }
-
-        body.light-mode .usage-guide ol {
-            color: #666;
-        }
-
-        .usage-guide li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* All Games Collection Styles */
-        .all-games-list {
-            max-height: 400px;
-            overflow-y: auto;
-            margin: 1rem 0;
-            padding: 1rem;
-            background: rgba(15, 20, 25, 0.5);
-            border-radius: 10px;
-            border: 1px solid rgba(108, 92, 231, 0.2);
-        }
-
-        .all-games-list::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .all-games-list::-webkit-scrollbar-track {
-            background: rgba(26, 31, 46, 0.5);
-            border-radius: 4px;
-        }
-
-        .all-games-list::-webkit-scrollbar-thumb {
-            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-            border-radius: 4px;
-        }
-
-        .all-games-list::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(90deg, #5b4bc4, #8a7ff0);
-        }
-
-        .game-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
-            margin: 8px 0;
-            background: rgba(26, 31, 46, 0.7);
-            border-radius: 8px;
-            border-left: 4px solid #6c5ce7;
-            transition: all 0.3s;
-        }
-
-        .game-item:hover {
-            background: rgba(108, 92, 231, 0.15);
-            transform: translateX(5px);
-        }
-
-        .game-item-name {
-            font-weight: 600;
-            color: #e0e0e0;
-        }
-
-        body.light-mode .game-item-name {
-            color: #333;
-        }
-
-        .game-item-category {
-            font-size: 0.8rem;
-            padding: 3px 10px;
-            border-radius: 15px;
-            background: rgba(108, 92, 231, 0.2);
-            color: #a29bfe;
-        }
-
-        .game-item-premium {
-            background: rgba(255, 107, 0, 0.2);
-            color: #ff9a00;
-        }
-
-        .collection-stats {
-            display: flex;
-            justify-content: space-around;
-            background: rgba(108, 92, 231, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            border: 1px solid rgba(108, 92, 231, 0.3);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #6c5ce7;
-            display: block;
-        }
-
-        .stat-label {
+            margin-bottom: 1rem;
             font-size: 0.9rem;
-            color: #b0b0b0;
+            flex-grow: 1;
+            min-height: 60px;
+        }
+
+        .download-buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: auto;
         }
 
         /* Existing styles below... */
@@ -1148,6 +1091,7 @@
             padding: 1rem;
             border-radius: 10px;
             margin-top: 1.5rem;
+            position: relative;
         }
 
         .whatsapp-info h3 {
@@ -1472,14 +1416,25 @@
                 padding: 10px 20px;
             }
 
-            .collection-stats {
+            .whatsapp-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                right: 15px;
+            }
+
+            .download-buttons-container {
                 flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Icon -->
+    <a href="https://whatsapp.com/channel/0029VbBxz643gvWXQuztjf3C" class="whatsapp-icon" target="_blank" title="Join Our WhatsApp Channel">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- XP Progress Bar -->
     <div class="xp-bar">
         <div class="xp-progress" id="xp-progress"></div>
@@ -1620,50 +1575,48 @@
                         <option value="Efootball 2026">Efootball 2026 Psp</option>
                         <option value="Wild Blood">Wild Blood</option>
                         <option value="Watch Dogs">Watch Dogs</option>
-                           <option value="UNBROKEN:Survival ">UNBROKEN:Survival </option>
-                     <option      value="DLS 26 ">DLS 26 </option>                 
-                          <option value="Fire-Apocalypse-zombie">Fire-Apocalypse-zombie</option>
-                                                    <option value="DLS 2026 MOD 19 Apk">DLS 2026 MOD 19 Apk</option>
-                                                    <option value="Call of duty black ops ">Call of duty black ops </option>
-             <option value="Blur">Blur</option>
-             
-             <option value="Downhill Domination ">Downhill Domination</option>
-             
-             <option value="FIFA Orginal">FIFA Orginal</option>                                      
-                                                    <option value="WWE">WWE</option>
-                                                    <option value="GRAND THEFT AUTO 5 MOBILE LITE">GRAND THEFT AUTO 5 MOBILE LITE</option>
-                                                    <option value="FIFA 16 MOD EFOOTBALL">FIFA 16 MOD EFOOTBALL</option>
-                                                    <option value="FIFA 16 MOD EFOOTBALL 2026 ">FIFA 16 MOD EFOOTBALL 2026</option>
-                                                    <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
-                                                    <option value="GRAND THEFT AUTO V.3.1">GRAND THEFT AUTO V.3.1</option>
-                                                    <option value="FIFA 16 MOD EAFC26">FIFA 16 MOD EAFC26</option>
-                                                    <option value="FIFA 16 MOD FIFA 25(UFL)">FIFA 16 MOD FIFA 25(UFL)</option>
-                                                    <option value="FC26 OFFLINE GAME ">FC26 OFFLINE GAME</option>
-                                                    <option value="MORTAL KOMBAT(AETHERSX2)EMULATOR">MORTAL KOMBAT(AETHERSX2)EMULATOR</option>
-                                                    <option value="MK(MORTAL KOMBAT)PSP">MK(MORTAL KOMBAT)PSP</option>
-                                                    <option value="FTS 26 ">FTS 26 </option>
-                                                    <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
-                                                    <option value="Prince Of Persia ">Prince Of Persia</option>
-                                                    <option value="NEED FOR SPEED ">NEED FOR SPEED</option>
-                                                    <option value="GTA IV ">GTA IV</option>
-                                                    <option value="FC26 MOD 2016">FC26 MOD 2016</option>
-                                                    <option value="Call Of Duty:Strike Team">Call Of Duty:Strike Team</option>
-                                                    <option value="Once a Human">Once a Human</option>
-                                                    <option value="battleops ">battleops</option>
-                                                    <option value="EFOOTBALL 2026">EFOOTBALL 2026 </option>
-                                                    <option value="FIFA 2025 MOD 14">FIFA 2025 MOD 14 </option>
-                                                    <option value="RALLY RACING PRO">RALLY RACING PRO </option>
-                                                    <option value="RACE MAX PRO">RACE MAX PRO </option>
-                                                    <option value="BATMAN">BATMAN </option>
-                                                    <option value="SPIDERMAN">SPIDERMAN </option>
-       
-<option value="RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
-
-<option value="DEAD EFFECT">DEAD EFFECT </option>
-
-<option value="Hitman Sniper">Hitman Sniper</option> 
-
-<option value="Truck Simulator">Truck Simulator </option>                                            
+                        <option value="UNBROKEN:Survival ">UNBROKEN:Survival </option>
+                        <option value="DLS 26 ">DLS 26 </option>
+                        <option value="Fire-Apocalypse-zombie">Fire-Apocalypse-zombie</option>
+                        <option value="DLS 2026 MOD 19 Apk">DLS 2026 MOD 19 Apk</option>
+                        <option value="Call of duty black ops ">Call of duty black ops </option>
+                        <option value="Blur">Blur</option>
+                        <option value="Downhill Domination ">Downhill Domination</option>
+                        <option value="FIFA Orginal">FIFA Orginal</option>
+                        <option value="WWE">WWE</option>
+                        <option value="GRAND THEFT AUTO 5 MOBILE LITE">GRAND THEFT AUTO 5 MOBILE LITE</option>
+                        <option value="FIFA 16 MOD EFOOTBALL">FIFA 16 MOD EFOOTBALL</option>
+                        <option value="FIFA 16 MOD EFOOTBALL 2026 ">FIFA 16 MOD EFOOTBALL 2026</option>
+                        <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
+                        <option value="GRAND THEFT AUTO V.3.1">GRAND THEFT AUTO V.3.1</option>
+                        <option value="FIFA 16 MOD EAFC26">FIFA 16 MOD EAFC26</option>
+                        <option value="FIFA 16 MOD FIFA 25(UFL)">FIFA 16 MOD FIFA 25(UFL)</option>
+                        <option value="FC26 OFFLINE GAME ">FC26 OFFLINE GAME</option>
+                        <option value="MORTAL KOMBAT(AETHERSX2)EMULATOR">MORTAL KOMBAT(AETHERSX2)EMULATOR</option>
+                        <option value="MK(MORTAL KOMBAT)PSP">MK(MORTAL KOMBAT)PSP</option>
+                        <option value="FTS 26 ">FTS 26 </option>
+                        <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
+                        <option value="Prince Of Persia ">Prince Of Persia</option>
+                        <option value="NEED FOR SPEED ">NEED FOR SPEED</option>
+                        <option value="GTA IV ">GTA IV</option>
+                        <option value="FC26 MOD 2016">FC26 MOD 2016</option>
+                        <option value="Call Of Duty:Strike Team">Call Of Duty:Strike Team</option>
+                        <option value="Once a Human">Once a Human</option>
+                        <option value="battleops ">battleops</option>
+                        <option value="EFOOTBALL 2026">EFOOTBALL 2026 </option>
+                        <option value="FIFA 2025 MOD 14">FIFA 2025 MOD 14 </option>
+                        <option value="RALLY RACING PRO">RALLY RACING PRO </option>
+                        <option value="RACE MAX PRO">RACE MAX PRO </option>
+                        <option value="BATMAN">BATMAN </option>
+                        <option value="SPIDERMAN">SPIDERMAN </option>
+                        <option value="RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
+                        <option value="DEAD EFFECT">DEAD EFFECT </option>
+                        <option value="Hitman Sniper">Hitman Sniper</option>
+                        <option value="Truck Simulator">Truck Simulator </option>
+                        <option value="WWE PATCH 2026 PSP">WWE PATCH 2026 PSP</option>
+                        <option value="GTA V MOD 2">GTA V MOD 2</option>
+                        <option value="Fc26">Fc26</option>
+                        value="UFL MOBILE">UFL MOBILE</option>
                     </select>
                     <button id="generate-link">
                         Generate Link
@@ -1687,22 +1640,8 @@
                         <div id="message-content">
                             <!-- Preview will be inserted here -->
                         </div>
-                        <p style="color: #b0b0b0; font-size: 0.9rem; margin-top: 0.5rem;">
-                            Copy this message and share with your game picture!
-                        </p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="usage-guide">
-                <h4><i class="fas fa-info-circle"></i> How to Use:</h4>
-                <ol>
-                    <li>Select a game from the dropdown</li>
-                    <li>Click "Generate Link"</li>
-                    <li>Copy the generated link</li>
-                    <li>Share in WhatsApp with the game picture</li>
-                    <li>When someone clicks the link, they'll go directly to that game!</li>
-                </ol>
             </div>
         </div>
     </section>
@@ -1718,47 +1657,6 @@
         </div>
         
         <div class="games-grid">
-            <!-- ========== ALL GAMES COLLECTION CARD ========== -->
-            <div class="game-card" data-category="free" data-game="All Games Collection">
-                <div class="game-badge badge-collection">Collection</div>
-                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="All Games Collection" class="game-image">
-                <div class="game-info">
-                    <h3 class="game-title">All Games Collection</h3>
-                    <p class="game-description">Complete collection of all 50+ games available on our platform. Browse, filter, and find your next favorite game!</p>
-                    
-                    <div class="collection-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Total Games</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">45+</span>
-                            <span class="stat-label">Free Games</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Premium Games</span>
-                        </div>
-                    </div>
-                    
-                    <div class="all-games-list" id="all-games-list">
-                        <!-- Games will be dynamically added here -->
-                    </div>
-                    
-                    <a href="javascript:void(0)" class="download-btn" id="view-all-games">
-                        <i class="fas fa-list"></i> Browse All Games
-                    </a>
-                    
-                    <a href="javascript:void(0)" class="download-btn" id="filter-free-games">
-                        <i class="fas fa-gift"></i> View Free Games Only
-                    </a>
-                    
-                    <a href="javascript:void(0)" class="download-btn" id="filter-premium-games">
-                        <i class="fas fa-crown"></i> View Premium Games Only
-                    </a>
-                </div>
-            </div>
-
             <!-- ========== ORIGINAL GAME CARDS ========== -->
             <!-- Game Card 1 - Premium -->
             <div class="game-card" data-category="premium" data-game="GTA V Mod San Andreas">
@@ -1769,28 +1667,29 @@
                     <p class="game-description">Open world game with high quality graphics.</p>
                     
                     <div class="premium-price">
-                        <div>
-                        </div>
+                        <div></div>
                         <div class="game-rating">
                             <i class="fas fa-star"></i>
                             <span>4.8</span>
                         </div>
                     </div>
                     
-                    <!-- Primary Download Button -->
-                    <a href="https://www.mediafire.com/file/dlsjqcr5vscamm7/Mali-GTA_v_style_graphics.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Mali-GTA_V
-                    </a>
-                    
-                    <!-- Additional Download Button 1 -->
-                    <a href="https://www.mediafire.com/file/4kvv2569snq7a4v/Aderno-GTA_V_style_graphics.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Aderno-GTA_V
-                    </a>
-                    
-                    <!-- Additional Download Button 2 -->
-                    <a href="https://www.mediafire.com/file/nc1kzihgvociv8t/Power_Vr-GTA_V_style_Graphics.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Power_Vr_Gta V 
-                    </a>
+                    <div class="download-buttons-container">
+                        <!-- Primary Download Button -->
+                        <a href="https://www.mediafire.com/file/dlsjqcr5vscamm7/Mali-GTA_v_style_graphics.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Mali-GTA_V
+                        </a>
+                        
+                        <!-- Additional Download Button 1 -->
+                        <a href="https://www.mediafire.com/file/4kvv2569snq7a4v/Aderno-GTA_V_style_graphics.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Aderno-GTA_V
+                        </a>
+                        
+                        <!-- Additional Download Button 2 -->
+                        <a href="https://www.mediafire.com/file/nc1kzihgvociv8t/Power_Vr-GTA_V_style_Graphics.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Power_Vr_Gta V 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1810,9 +1709,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/041u4yh2l4l79kl/GTA_San_Andreas_Mod_2.11.277-RisTechy.com.apk/file?dkey=gostqitbuxz&r=1536" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/041u4yh2l4l79kl/GTA_San_Andreas_Mod_2.11.277-RisTechy.com.apk/file?dkey=gostqitbuxz&r=1536" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1832,20 +1733,22 @@
                         <div></div>
                     </div>
                     
-                    <!-- Primary Download Button -->
-                    <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file " class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <!-- Additional Download Button 1 -->
-                    <a href="https://www.mediafire.com/file/k4oe3jpzzynh8dt/Data+DFL+2025+Mod+FIFA+16+V4.0+-+RisTechy.com.rar/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <!-- Additional Download Button 2 -->
-                    <a href="https://www.mediafire.com/file/myt46inwwr9fnr4/Obb_FIFA_2016_Ultimate_Team_-+RisTechy.com.rar/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Obb 
-                    </a>
+                    <div class="download-buttons-container">
+                        <!-- Primary Download Button -->
+                        <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file " class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <!-- Additional Download Button 1 -->
+                        <a href="https://www.mediafire.com/file/k4oe3jpzzynh8dt/Data+DFL+2025+Mod+FIFA+16+V4.0+-+RisTechy.com.rar/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <!-- Additional Download Button 2 -->
+                        <a href="https://www.mediafire.com/file/myt46inwwr9fnr4/Obb_FIFA_2016_Ultimate_Team_-+RisTechy.com.rar/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Obb 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1865,9 +1768,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/jl6mdl8sftoe9ec/bright-memory-infinite-1.31-mod-menu-5play.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/jl6mdl8sftoe9ec/bright-memory-infinite-1.31-mod-menu-5play.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1887,17 +1792,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://modsfire.com/H31K0FijdpIjk72" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    <!-- Additional Download Button 1 -->
-                    <a href="https://www.mediafire.com/file/s8oy302eupsdbyd/Data.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
+                    <div class="download-buttons-container">
+                        <a href="https://modsfire.com/H31K0FijdpIjk72" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        <!-- Additional Download Button 1 -->
+                        <a href="https://www.mediafire.com/file/s8oy302eupsdbyd/Data.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
                         </a>
                         <!-- Additional Download Button 2 -->
-                    <a href="https://modsfire.com/3NV9qrimEkA12uk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Obb 
+                        <a href="https://modsfire.com/3NV9qrimEkA12uk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Obb 
                         </a>
+                    </div>
                 </div>
             </div>
 
@@ -1917,9 +1824,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/6fm25f39to92gjy/Call_of_Duty_-_Modern_Warfare_3_%2528USA%2529.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/6fm25f39to92gjy/Call_of_Duty_-_Modern_Warfare_3_%2528USA%2529.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
         
@@ -1939,11 +1848,13 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/6zvue8ep7n6n46q/BUS+TANZANIA+GAME+LA+BUS+FILE+ZOTE+NIPO+HAPA+KUPATA+PASSWORD+TUMA+NENO+BUS+KWENDA+NAMBA+0686350237+AU+0672550237+RAMANI+ZIPO.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/6zvue8ep7n6n46q/BUS+TANZANIA+GAME+LA+BUS+FILE+ZOTE+NIPO+HAPA+KUPATA+PASSWORD+TUMA+NENO+BUS+KWENDA+NAMBA+0686350237+AU+0672550237+RAMANI+ZIPO.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
                     </div>
-                        </div>
+                </div>
+            </div>
 
             <!-- Game Card 8 - Free -->
             <div class="game-card" data-category="free" data-game="Tomb rider">
@@ -1961,13 +1872,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/yz6xib77kswfmgx/Tomb_Raider_-_Legend_%2528Europe%2529_-_RisTechy.com.zip/file?dkey=9r1zbdxeeor&r=422" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/yz6xib77kswfmgx/Tomb_Raider_-_Legend_%2528Europe%2529_-_RisTechy.com.zip/file?dkey=9r1zbdxeeor&r=422" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
                     </div>
-                    </div>
+                </div>
+            </div>
 
-     <!-- Game Card 9 - Free -->
+            <!-- Game Card 9 - Free -->
             <div class="game-card" data-category="free" data-game="God of war ">
                 <div class="game-badge badge-free">Free</div>
                 <img src="God of war .jpeg" alt="God Of War " class="game-image">
@@ -1983,13 +1896,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://downloads.romspedia.com/roms/God%20of%20War%20-%20Ghost%20of%20Sparta%20%28USA%29%20%28En%2CFr%2CEs%29%20%28v2.00%29.zip" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://downloads.romspedia.com/roms/God%20of%20War%20-%20Ghost%20of%20Sparta%20%28USA%29%20%28En%2CFr%2CEs%29%20%28v2.00%29.zip" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
                     </div>
-                     </div>
+                </div>
+            </div>
                     
-     <!-- Game Card 10 - Free -->
+            <!-- Game Card 10 - Free -->
             <div class="game-card" data-category="free" data-game="Spiderman 3 PSP ">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Spiderman .jpg" alt="Spiderman " class="game-image">
@@ -2005,13 +1920,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/lg9y846339he14u/Spider-Man_3_%2528USA%2529_%2528v1.02%2529_-_RisTechy.com.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                   </a>
-                   </div>
-                   </div>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/lg9y846339he14u/Spider-Man_3_%2528USA%2529_%2528v1.02%2529_-_RisTechy.com.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
+                </div>
+            </div>
         
-          <!-- Game Card 11 - Free -->
+            <!-- Game Card 11 - Free -->
             <div class="game-card" data-category="free" data-game="FC26 PSP">
                 <div class="game-badge badge-free">Free</div>
                 <img src="FC 26.jpg" alt="FC26 " class="game-image">
@@ -2027,19 +1944,21 @@
                         <div></div>
                     </div>
                     
-                    <!-- Primary Download Button -->
-                    <a href="https://www.mediafire.com/file/b28wxpq0v0wvgwv/BETEGAMING_EA_FC_26_PSP_ISO.rar/file?dkey=96xi9k92rrq&r=1637 " class="download-btn">
-                        <i class="fas fa-download"></i> Download Game File
-                    </a>
-                    
-                    <!-- Additional Download Button 1 -->
-                    <a href="https://www.mediafire.com/file/urpvd4wrat7jtb5/EA_FC_26_TEXTURES_%252B_SAVEDATA_BETEGAMING.rar/file?dkey=1yigpank1k8&r=311" class="download-btn">
-                        <i class="fas fa-download"></i> Download TEXTURE & SAVEDATA
-                    </a>
+                    <div class="download-buttons-container">
+                        <!-- Primary Download Button -->
+                        <a href="https://www.mediafire.com/file/b28wxpq0v0wvgwv/BETEGAMING_EA_FC_26_PSP_ISO.rar/file?dkey=96xi9k92rrq&r=1637 " class="download-btn">
+                            <i class="fas fa-download"></i> Download Game File
+                        </a>
+                        
+                        <!-- Additional Download Button 1 -->
+                        <a href="https://www.mediafire.com/file/urpvd4wrat7jtb5/EA_FC_26_TEXTURES_%252B_SAVEDATA_BETEGAMING.rar/file?dkey=1yigpank1k8&r=311" class="download-btn">
+                            <i class="fas fa-download"></i> Download TEXTURE & SAVEDATA
+                        </a>
                     </div>
-                       </div>
+                </div>
+            </div>
                          
-                             <!-- Game Card 12 - Free -->
+            <!-- Game Card 12 - Free -->
             <div class="game-card" data-category="free" data-game="FC26 MOD">
                 <div class="game-badge badge-free">Free</div>
                 <img src="FC mobile .jpg" alt="FC" class="game-image">
@@ -2055,26 +1974,27 @@
                         <div></div>
                     </div>
                     
-                    <!-- Primary Download Button -->
-                    <a href=" https://www.mediafire.com/file/lpebs6fvcxu0t3o/EA+FC+MOD+26+BY+ZEOL.apk/file?dkey=nfuqi21t5my&r=1541" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <!-- Additional Download Button 1 -->
-                    <a href="https://www.mediafire.com/file/hoi41hkopi3bela/data.rar/file?dkey=ya71q54ucso&r=889" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <!-- Additional Download Button 2 -->
-                    <a href="https://www.mediafire.com/file/cyqmrxukdb0xw85/obb.rar/file?dkey=q70zjgb43ab&r=1466" class="download-btn">
-                        <i class="fas fa-download"></i> Download Obb 
-                    </a>
+                    <div class="download-buttons-container">
+                        <!-- Primary Download Button -->
+                        <a href=" https://www.mediafire.com/file/lpebs6fvcxu0t3o/EA+FC+MOD+26+BY+ZEOL.apk/file?dkey=nfuqi21t5my&r=1541" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <!-- Additional Download Button 1 -->
+                        <a href="https://www.mediafire.com/file/hoi41hkopi3bela/data.rar/file?dkey=ya71q54ucso&r=889" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <!-- Additional Download Button 2 -->
+                        <a href="https://www.mediafire.com/file/cyqmrxukdb0xw85/obb.rar/file?dkey=q70zjgb43ab&r=1466" class="download-btn">
+                            <i class="fas fa-download"></i> Download Obb 
+                        </a>
+                    </div>
                 </div>
             </div> 
             
-            
-                    
-                    <div class="game-card" data-category="free" data-game="Carnage Wars">
+            <!-- Game Card 13 - Free -->
+            <div class="game-card" data-category="free" data-game="Carnage Wars">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Carnage wars .png" alt="Carnage Wars " class="game-image">
                 <div class="game-info">
@@ -2089,13 +2009,16 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://play.google.com/store/apps/details%3Fid%3Dcom.ziczac.shooter%26hl%3Den%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dcarnage%2Bwars%2Bplaystore%2Bgame%2Blink%26pcampaignid%3DAPPU_1_f0QraaSYHLm9ptQPqqGlCQ&ved=2ahUKEwjk08evh5iRAxW5nokEHapQKQEQ5YQBegQIDhAC&sqi=2&usg=AOvVaw0un12m-ankzdPDTbjTxMJj" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://play.google.com/store/apps/details%3Fid%3Dcom.ziczac.shooter%26hl%3Den%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dcarnage%2Bwars%2Bplaystore%2Bgame%2Blink%26pcampaignid%3DAPPU_1_f0QraaSYHLm9ptQPqqGlCQ&ved=2ahUKEwjk08evh5iRAxW5nokEHapQKQEQ5YQBegQIDhAC&sqi=2&usg=AOvVaw0un12m-ankzdPDTbjTxMJj" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
             
-              <div class="game-card" data-category="free" data-game="Red Dead Redemption ">
+            <!-- Game Card 14 - Free -->
+            <div class="game-card" data-category="free" data-game="Red Dead Redemption ">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Red dead redemption .jpg" alt="Red Dead Redemption " class="game-image">
                 <div class="game-info">
@@ -2110,9 +2033,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/red-dead-redemption-netflix/RDR-NETFLIX-v1.50.60293175-unlocked-apkvision.apks" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/red-dead-redemption-netflix/RDR-NETFLIX-v1.50.60293175-unlocked-apkvision.apks" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -2132,13 +2057,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/jzcbzet1panbvzx/EUROPE_FRONT_REMASTERED_1.0.2_MOD_BY_RADJA_GAMERZ.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Main Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/jzcbzet1panbvzx/EUROPE_FRONT_REMASTERED_1.0.2_MOD_BY_RADJA_GAMERZ.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Main Game
+                        </a>
+                    </div>
                 </div>
             </div>
             
-             <!-- Game Card: Unbroken:Survival -->
+            <!-- Game Card: Unbroken:Survival -->
             <div class="game-card" data-category="free" data-game="Unbroken:Survival ">
                 <div class="game-badge badge-free">Free</div>
                 <img src="unbroken .jpeg" alt="Unbroken:Survival" class="game-image">
@@ -2154,9 +2081,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/unbroken-survival/Unbroken-Survival-v0.2.2-full-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/unbroken-survival/Unbroken-Survival-v0.2.2-full-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
                 </div>
             </div>
                 
@@ -2176,17 +2105,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/1xs68fp4tkikoxm/eFootball_-_2026_PSP_-_SAN_JOE_WC.iso/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download iSO
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/fsy5nia4xld4ua3/SHADERS.zip/file?dkey=2cdy58jsgbi&r=376" class="download-btn">
-                        <i class="fas fa-download"></i> Download SHERDERS
-                    </a>
-                    
-                    <a href="https://an1.com/file_4294-dw.html" class="download-btn">
-                        <i class="fas fa-download"></i> Download PSP Emulator 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/1xs68fp4tkikoxm/eFootball_-_2026_PSP_-_SAN_JOE_WC.iso/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download iSO
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/fsy5nia4xld4ua3/SHADERS.zip/file?dkey=2cdy58jsgbi&r=376" class="download-btn">
+                            <i class="fas fa-download"></i> Download SHERDERS
+                        </a>
+                        
+                        <a href="https://an1.com/file_4294-dw.html" class="download-btn">
+                            <i class="fas fa-download"></i> Download PSP Emulator 
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -2206,9 +2137,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/wild-blood/Wild-Blood-v1.1.5.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/wild-blood/Wild-Blood-v1.1.5.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2228,9 +2161,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/watch-dogs/WatchDogsMobileV1.2-apkvision.org.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/watch-dogs/WatchDogsMobileV1.2-apkvision.org.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2250,9 +2185,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/fire-apocalypse-zombie-games/Fire-Apocalypse-Zombie-Games-v1.4.0-mod-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/fire-apocalypse-zombie-games/Fire-Apocalypse-Zombie-Games-v1.4.0-mod-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Now
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -2272,13 +2209,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/wwe-2k25-netflix-edition/WWE-2K25-v0.1187.2-unlocked-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
-                    
-                    <a href="https://dl.apkvision.org/wwe-2k25-netflix-edition/WWE-2K25-v0.1187.2-commentary-unlocked-apkvision.apks" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game with COMMENTARY 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/wwe-2k25-netflix-edition/WWE-2K25-v0.1187.2-unlocked-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                        
+                        <a href="https://dl.apkvision.org/wwe-2k25-netflix-edition/WWE-2K25-v0.1187.2-commentary-unlocked-apkvision.apks" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game with COMMENTARY 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2298,9 +2237,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://happymod.to/dream-league-soccer-2020-app-mod/com.firsttouchgames.dls7/download.html" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://happymod.to/dream-league-soccer-2020-app-mod/com.firsttouchgames.dls7/download.html" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2320,13 +2261,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://romsfun.com/roms/nintendo-wii/call-of-duty-black-ops-4.html" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
-                    
-                    <a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu" class="download-btn">
-                        <i class="fas fa-download"></i> Download Emulator 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://romsfun.com/roms/nintendo-wii/call-of-duty-black-ops-4.html" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                        
+                        <a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu" class="download-btn">
+                            <i class="fas fa-download"></i> Download Emulator 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2346,13 +2289,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file_premium/2678sh5ac7c9053/%2540B.lur.zip/file?dkey=jj295syh7nj&r=714" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
-                    
-                    <a href="https://github.com/Succubussix/winlator-bionic-glibc/releases/tag/just-bionic" class="download-btn">
-                        <i class="fas fa-download"></i> Download Emulator 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file_premium/2678sh5ac7c9053/%2540B.lur.zip/file?dkey=jj295syh7nj&r=714" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                        
+                        <a href="https://github.com/Succubussix/winlator-bionic-glibc/releases/tag/just-bionic" class="download-btn">
+                            <i class="fas fa-download"></i> Download Emulator 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2372,21 +2317,23 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://download2391.mediafire.com/tcu53moj9iqgX3DLPu9pvju5xr3Lhz-pFeP-p53S86_AfPj3bfNUAZSLWAgNsva6iXAoGdRAFi8uqM96vyQ_xsT-j8PWVhxpPdEyyQn2DzMg6NW656X-5HlWGrhqo5V49mWMn4b0VHwkAQ9ZSij2HDKBGPdAOico-xSkCCA4MypiDRAIQw/ztmg709i5btzp5f/Downhill+Domination+BY+Akur.zip" class="download-btn">
-                        <i class="fas fa-download"></i> Download Downhill Domination 
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/71ayxyiptkwb4ap/2_BIOS_%2528Europe%2529_BY_PLAYGAMEZ_TZ.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Bios
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/y0qgbdkurg6b5xm/PLAYGAMEZ_TZ.7z/file" class="download-btn">
-                        <i class="fas fa-download"></i> Memory Card
-                    </a>
-                    
-                    <a href="https://en.divxland.org/wp-content/themes/apps/download.php?id=4311&key=NDMxMXwxNzY0MTY2OTY3fDJhMDk6YmFjNTo1OTFjOjFiOWI6OjJjMDoxNXw3YTEzNDIwYjUwOGU4MGIwYTgwOGRkMWNjZWI4YzIxODYxMThiYTFiMWY0ODdjOWVlOTYyNGYwZjE1YmZjZjI1" class="download-btn">
-                        <i class="fas fa-download"></i>AeretherSX2 Emulator 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://download2391.mediafire.com/tcu53moj9iqgX3DLPu9pvju5xr3Lhz-pFeP-p53S86_AfPj3bfNUAZSLWAgNsva6iXAoGdRAFi8uqM96vyQ_xsT-j8PWVhxpPdEyyQn2DzMg6NW656X-5HlWGrhqo5V49mWMn4b0VHwkAQ9ZSij2HDKBGPdAOico-xSkCCA4MypiDRAIQw/ztmg709i5btzp5f/Downhill+Domination+BY+Akur.zip" class="download-btn">
+                            <i class="fas fa-download"></i> Download Downhill Domination 
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/71ayxyiptkwb4ap/2_BIOS_%2528Europe%2529_BY_PLAYGAMEZ_TZ.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Bios
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/y0qgbdkurg6b5xm/PLAYGAMEZ_TZ.7z/file" class="download-btn">
+                            <i class="fas fa-download"></i> Memory Card
+                        </a>
+                        
+                        <a href="https://en.divxland.org/wp-content/themes/apps/download.php?id=4311&key=NDMxMXwxNzY0MTY2OTY3fDJhMDk6YmFjNTo1OTFjOjFiOWI6OjJjMDoxNXw3YTEzNDIwYjUwOGU4MGIwYTgwOGRkMWNjZWI4YzIxODYxMThiYTFiMWY0ODdjOWVlOTYyNGYwZjE1YmZjZjI1" class="download-btn">
+                            <i class="fas fa-download"></i>AeretherSX2 Emulator 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2406,25 +2353,27 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/ebdowesg1vfptam/NEW_APK_BY_MPROGAMING.COM.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://modsfire.com/download/01PrwKBnSP670R3/cb4e9 " class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/ycxkoqne89x35zh/FIFA_16_OBB_BY_ALPHATRIX_GAMING.zip/file?dkey=s4grco7xfky&r=1729" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
-                        <i class="fas fa-download"></i> Download Commentary 
-                    </a>
-                    
-                    <a href="https://gamebola16.netlify.app/index.html" class="download-btn">
-                        <i class="fas fa-download"></i> Download Career Saver
-                    </a> 
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/ebdowesg1vfptam/NEW_APK_BY_MPROGAMING.COM.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://modsfire.com/download/01PrwKBnSP670R3/cb4e9 " class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/ycxkoqne89x35zh/FIFA_16_OBB_BY_ALPHATRIX_GAMING.zip/file?dkey=s4grco7xfky&r=1729" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
+                            <i class="fas fa-download"></i> Download Commentary 
+                        </a>
+                        
+                        <a href="https://gamebola16.netlify.app/index.html" class="download-btn">
+                            <i class="fas fa-download"></i> Download Career Saver
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2444,9 +2393,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/0jbcc8ceuliww01/GTA+5+Mobile.apk/file?dkey=apgonjgunqs&r=1967" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/0jbcc8ceuliww01/GTA+5+Mobile.apk/file?dkey=apgonjgunqs&r=1967" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2466,21 +2417,23 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://modsfire.com/download/H31K0FijdpIjk72/211f6" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/oslwo73x7kn79k4/Data.7z/file?dkey=41u79f4bq8i&r=735" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <a href="https://modsfire.com/download/3NV9qrimEkA12uk/cb88c" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://modsfire.com/download/38MgoObODL5oznx/35242" class="download-btn">
-                        <i class="fas fa-download"></i> Download English Commentary 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://modsfire.com/download/H31K0FijdpIjk72/211f6" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/oslwo73x7kn79k4/Data.7z/file?dkey=41u79f4bq8i&r=735" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <a href="https://modsfire.com/download/3NV9qrimEkA12uk/cb88c" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://modsfire.com/download/38MgoObODL5oznx/35242" class="download-btn">
+                            <i class="fas fa-download"></i> Download English Commentary 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2500,13 +2453,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.eslamgaming.com/link-is-being-prepared??&&url=_https://www.mediafire.com/file/99dzdo1959d6w86/UT-16_crazpigs.rar/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk & OBB
-                    </a>
-                    
-                    <a href="https://www.eslamgaming.com/link-is-being-prepared??&&url=_https://www.mediafire.com/file/7v8g6r0igddh2hh/data.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.eslamgaming.com/link-is-being-prepared??&&url=_https://www.mediafire.com/file/99dzdo1959d6w86/UT-16_crazpigs.rar/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk & OBB
+                        </a>
+                        
+                        <a href="https://www.eslamgaming.com/link-is-being-prepared??&&url=_https://www.mediafire.com/file/7v8g6r0igddh2hh/data.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2526,9 +2481,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://happymod.to/dream-league-soccer-2020-app-mod/com.firsttouchgames.dls7/download.html" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://happymod.to/dream-league-soccer-2020-app-mod/com.firsttouchgames.dls7/download.html" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2548,21 +2505,23 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file?dkey=zbfzd9hi0hy&r=1402" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/gg7zla30q4fgloh/LATEST_EAFC_26_THEME_DATA_FILE_FULL_MANAGERTOURNAMENTS_MODEBY_ALPHATRIX_GAMING.zip/file?dkey=796sxnjcmet&r=1842" class="download-btn">
-                        <i class="fas fa-download"></i> Download DATA
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/r7qqwy5h2gdf2pt/OBB+FIFA+16+MOBILE.zip/file?dkey=rgc39dc2p9w&r=1024" class="download-btn">
-                        <i class="fas fa-download"></i> Download Obb
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
-                        <i class="fas fa-download"></i> Download commentary
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file?dkey=zbfzd9hi0hy&r=1402" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/gg7zla30q4fgloh/LATEST_EAFC_26_THEME_DATA_FILE_FULL_MANAGERTOURNAMENTS_MODEBY_ALPHATRIX_GAMING.zip/file?dkey=796sxnjcmet&r=1842" class="download-btn">
+                            <i class="fas fa-download"></i> Download DATA
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/r7qqwy5h2gdf2pt/OBB+FIFA+16+MOBILE.zip/file?dkey=rgc39dc2p9w&r=1024" class="download-btn">
+                            <i class="fas fa-download"></i> Download Obb
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
+                            <i class="fas fa-download"></i> Download commentary
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2582,21 +2541,23 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/2ub033dieuo3j4q/EAFC25+APK.zip/file?dkey=su8sbjmcmp2&r=750" class="download-btn">
-                        <i class="fas fa-download"></i> Download APK
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/sstda9vn085sao4/OBB_FIFA_23_ULTIMATE_TEAM_BY_AIV_RIEF.7z/file?dkey=7vnykkjx26f&r=1704" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/gapqg6y0dhwxbw8/UFL_25_ANDROID_OFFLINE_YT_Gunggaming_15.7z/file?dkey=whg3hp0hhp2&r=958" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data UFL
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
-                        <i class="fas fa-download"></i> Download commentary
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/2ub033dieuo3j4q/EAFC25+APK.zip/file?dkey=su8sbjmcmp2&r=750" class="download-btn">
+                            <i class="fas fa-download"></i> Download APK
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/sstda9vn085sao4/OBB_FIFA_23_ULTIMATE_TEAM_BY_AIV_RIEF.7z/file?dkey=7vnykkjx26f&r=1704" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/gapqg6y0dhwxbw8/UFL_25_ANDROID_OFFLINE_YT_Gunggaming_15.7z/file?dkey=whg3hp0hhp2&r=958" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data UFL
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/j9dkph9cbfv68qr/FIFA_16_ENGLISH_COMMENTARY_BY_M_PRO_GAMING.zip/file?dkey=g3bu59n596f&r=1307" class="download-btn">
+                            <i class="fas fa-download"></i> Download commentary
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2616,9 +2577,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://gta10.apkawards.com/ModGTA10/dlGTA/com.rockstargames.gtav/com.rockstargames.gtav_3.1-APK_Award.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://gta10.apkawards.com/ModGTA10/dlGTA/com.rockstargames.gtav/com.rockstargames.gtav_3.1-APK_Award.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2638,21 +2601,23 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/e97hxhejcmo1gx1/EAFC_24.apk/file?dkey=vfj6nv6ezwf&r=1705" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/r7qqwy5h2gdf2pt/OBB_FIFA_16_MOBILE.zip/file?dkey=tbbxes7prdl&r=1381" class="download-btn">
-                        <i class="fas fa-download"></i> Download Obb
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/xqagsk9cu31vqay/EA_FC_26_V1_BY_ROBER_FL.zip/file?dkey=ve4y0lxti9f&r=1468" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/e97hxhejcmo1gx1/EAFC_24.apk/file?dkey=vfj6nv6ezwf&r=1705" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/r7qqwy5h2gdf2pt/OBB_FIFA_16_MOBILE.zip/file?dkey=tbbxes7prdl&r=1381" class="download-btn">
+                            <i class="fas fa-download"></i> Download Obb
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/xqagsk9cu31vqay/EA_FC_26_V1_BY_ROBER_FL.zip/file?dkey=ve4y0lxti9f&r=1468" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data 
+                        </a>
+                    </div>
                 </div>
             </div>
              
-             <!-- Game Card: MK(MORTAL KOMBAT)PSP -->
+            <!-- Game Card: MK(MORTAL KOMBAT)PSP -->
             <div class="game-card" data-category="free" data-game="MK(MORTAL KOMBAT)PSP">
                 <div class="game-badge badge-free">Free</div>
                 <img src="mk.jpeg" alt="Mortal Kombat" class="game-image">
@@ -2668,9 +2633,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2690,9 +2657,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file " class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file " class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -2712,9 +2681,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://download2287.mediafire.com/a2dc78uvfrdglb59GcJisw_ZqiVtsl__EygAV6Ki0lbwB28_OvXFV9JfNo2agczk7NG7_MEbOzK4TMRB_TAUk8nP8kP4daQAjRXtj1it2px3mJbU3Vc5Nlp2n6xKxPpEhwgg5-TRwtn0FM59H2ugRkHe9pbEBKHSR5QH3fZEm67Zlw/1q9j2zuyfv7etat/FTS+26+Normal+LN30+DROID+Full+Transfer.zip" class="download-btn">
-                        <i class="fas fa-download"></i> Download Game
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://download2287.mediafire.com/a2dc78uvfrdglb59GcJisw_ZqiVtsl__EygAV6Ki0lbwB28_OvXFV9JfNo2agczk7NG7_MEbOzK4TMRB_TAUk8nP8kP4daQAjRXtj1it2px3mJbU3Vc5Nlp2n6xKxPpEhwgg5-TRwtn0FM59H2ugRkHe9pbEBKHSR5QH3fZEm67Zlw/1q9j2zuyfv7etat/FTS+26+Normal+LN30+DROID+Full+Transfer.zip" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
                 </div>
             </div>
              
@@ -2734,13 +2705,15 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://download2343.mediafire.com/6hl6irho2vxg9DEdNWGvJEoewJfokTMLask2y864foUQehhLMMq4dYxVui73dK3Bcl3s7M8InvXBdFsctlzAVqWnzLmtYq21ikspZevFRjjbJ8Yb1ehkjdiy57L2Q5P-PbiNbvPZw8q2taFxTlCsFerqonXGJ2z2kXl-cifxTCQ8Cg/jklp3zc6x8ym69t/COD+Strike+Team+YT+Adib+Bagus.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/n064kourfhmj1lb/OBB+COD+Strike+Tema+YT+Adib+Bagus.zip?dkey=8uyo5ipo55f&r=983" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://download2343.mediafire.com/6hl6irho2vxg9DEdNWGvJEoewJfokTMLask2y864foUQehhLMMq4dYxVui73dK3Bcl3s7M8InvXBdFsctlzAVqWnzLmtYq21ikspZevFRjjbJ8Yb1ehkjdiy57L2Q5P-PbiNbvPZw8q2taFxTlCsFerqonXGJ2z2kXl-cifxTCQ8Cg/jklp3zc6x8ym69t/COD+Strike+Team+YT+Adib+Bagus.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/n064kourfhmj1lb/OBB+COD+Strike+Tema+YT+Adib+Bagus.zip?dkey=8uyo5ipo55f&r=983" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2760,17 +2733,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/c9bnwpw948kd8k7/FC_26_.apk/file?dkey=wsy9dnrfzma&r=552" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://download2430.mediafire.com/le73z9dvhmagEpTy8P9uSgssh_oJ3iX4FnHNrypfQ1zuaeLsTKfCt73W4ID9-rbTti7gOGLPnu0267Y0g7ooVE_4PUBryIvQXJAT5mhORZUcccKIbODwwI9RCccrRfp4P5TU7zaE8crtmi4Q-mhhfadWkJO7BK1jXdR-6c0pEfEECw/4vymq96vdasdu3e/SAVE+MANAGER+MODE+FC26+DATA+FILE+TOURNAMENTS+MODE+BY+ALPHATRIX+GAMING.zip" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/1whr45n94yurh6h/OBB_BY_THORK_9INE_.zip/file?dkey=mvuyrvyas3w&r=1797" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/c9bnwpw948kd8k7/FC_26_.apk/file?dkey=wsy9dnrfzma&r=552" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://download2430.mediafire.com/le73z9dvhmagEpTy8P9uSgssh_oJ3iX4FnHNrypfQ1zuaeLsTKfCt73W4ID9-rbTti7gOGLPnu0267Y0g7ooVE_4PUBryIvQXJAT5mhORZUcccKIbODwwI9RCccrRfp4P5TU7zaE8crtmi4Q-mhhfadWkJO7BK1jXdR-6c0pEfEECw/4vymq96vdasdu3e/SAVE+MANAGER+MODE+FC26+DATA+FILE+TOURNAMENTS+MODE+BY+ALPHATRIX+GAMING.zip" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/1whr45n94yurh6h/OBB_BY_THORK_9INE_.zip/file?dkey=mvuyrvyas3w&r=1797" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2790,9 +2765,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/once-human/Once%20Human_1.0.22_apkvision.xapk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/once-human/Once%20Human_1.0.22_apkvision.xapk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
        
@@ -2812,9 +2789,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/battleops/Battleops-v1.5.3-mod-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/battleops/Battleops-v1.5.3-mod-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
        
@@ -2834,17 +2813,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/1kk63e1aqrjrv1c/APK_FIFA_16_MOD_EAFC_24.zip/file?dkey=w5fdkrux7o9&r=78" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk & OBB
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/1cooc1n8e4gc97g/obb.zip/file?dkey=xbnq8zx2v0s&r=1402" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/5uprnd87iyvxn5t/Efootball_Mobile_2026.7z/file?dkey=e5mujto2jja&r=1640" class="download-btn">
-                        <i class="fas fa-download"></i> Download DATA
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/1kk63e1aqrjrv1c/APK_FIFA_16_MOD_EAFC_24.zip/file?dkey=w5fdkrux7o9&r=78" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk & OBB
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/1cooc1n8e4gc97g/obb.zip/file?dkey=xbnq8zx2v0s&r=1402" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/5uprnd87iyvxn5t/Efootball_Mobile_2026.7z/file?dkey=e5mujto2jja&r=1640" class="download-btn">
+                            <i class="fas fa-download"></i> Download DATA
+                        </a>
+                    </div>
                 </div>
             </div> 
             
@@ -2864,17 +2845,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/i4acffstnivc1tq/FIFA_EA_FC_MOD_25_-_RisTechy.com.apk/file?dkey=p945y2tdynm&r=1118" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/cap139vksjjjh42/Data_FIFA_2025_Mod_14_Update_Jn_-__RisTechy.com.rar/file?dkey=ylxsxlpualr&r=1248" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/uy177773quolqup/Obb_FIFA_2025_Mod_14_Update_Jn_-_RisTechy.com.rar/file?dkey=bbfl3is4atr&r=1060" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/i4acffstnivc1tq/FIFA_EA_FC_MOD_25_-_RisTechy.com.apk/file?dkey=p945y2tdynm&r=1118" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/cap139vksjjjh42/Data_FIFA_2025_Mod_14_Update_Jn_-__RisTechy.com.rar/file?dkey=ylxsxlpualr&r=1248" class="download-btn">
+                            <i class="fas fa-download"></i> Download Data
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/uy177773quolqup/Obb_FIFA_2025_Mod_14_Update_Jn_-_RisTechy.com.rar/file?dkey=bbfl3is4atr&r=1060" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                    </div>
                 </div>
             </div> 
 
@@ -2894,17 +2877,19 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://download2388.mediafire.com/p9sp09k29ntgI16fMuQxnylDYfXMDQiV9up01ni8Is7W8C0ZATvhaFbKsggyDN6mBFeoZVG7DbMQ8Gnj8mLO6SgkVSuzFfBdspoGc_jLilL2zcqHxSBTRYig3qeCwIJe7SqUDZzGpRQXIPH2Lg_xHHLZ__N_2_yRA-p5HV7FYtDC/11jrevme34egkcd/GTA+SA+APK+2.10+PT+BR%2C+By+Ryuzaki+gamer.zip" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
-                    
-                    <a href="https://download2443.mediafire.com/mk0lc4enu3xgSrLrkRr_EgeZncxMHCugT0nm9YROq_x8JAaJZzsHEsO3KXpmkMGtYPtGSd_f6bSmsJFIxAE6ruszGag-GHHVsTLCmB4IzNaUwnxeuGKv_gSXx1xYbqR6a-3KhayzRSyg1UWI0Rs0andxwBt5q-dimIhYrkssqbtM/3pgfzy1hux8bom2/com.rockstargames.gtasa.rar" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://download2265.mediafire.com/5egwgb213fjgFGC04PTdfdetvd-raLn-MYO726zLq0I4Z4wFTWwOySMFKPnRs6Ir0NoRc4BkClOufWEZIYNkrkFeAdMkXdpgwVjFmVx1m7PTtMpBjcmOsJjmeVeCG8vXC45By5uhSYgaKSsRFTB9xbAUB29w7UN9jSvVtCrlfbOn/isz3f4osq5sov3n/V6.2.7z" class="download-btn">
-                        <i class="fas fa-download"></i> Download DATA
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://download2388.mediafire.com/p9sp09k29ntgI16fMuQxnylDYfXMDQiV9up01ni8Is7W8C0ZATvhaFbKsggyDN6mBFeoZVG7DbMQ8Gnj8mLO6SgkVSuzFfBdspoGc_jLilL2zcqHxSBTRYig3qeCwIJe7SqUDZzGpRQXIPH2Lg_xHHLZ__N_2_yRA-p5HV7FYtDC/11jrevme34egkcd/GTA+SA+APK+2.10+PT+BR%2C+By+Ryuzaki+gamer.zip" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                        
+                        <a href="https://download2443.mediafire.com/mk0lc4enu3xgSrLrkRr_EgeZncxMHCugT0nm9YROq_x8JAaJZzsHEsO3KXpmkMGtYPtGSd_f6bSmsJFIxAE6ruszGag-GHHVsTLCmB4IzNaUwnxeuGKv_gSXx1xYbqR6a-3KhayzRSyg1UWI0Rs0andxwBt5q-dimIhYrkssqbtM/3pgfzy1hux8bom2/com.rockstargames.gtasa.rar" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://download2265.mediafire.com/5egwgb213fjgFGC04PTdfdetvd-raLn-MYO726zLq0I4Z4wFTWwOySMFKPnRs6Ir0NoRc4BkClOufWEZIYNkrkFeAdMkXdpgwVjFmVx1m7PTtMpBjcmOsJjmeVeCG8vXC45By5uhSYgaKSsRFTB9xbAUB29w7UN9jSvVtCrlfbOn/isz3f4osq5sov3n/V6.2.7z" class="download-btn">
+                            <i class="fas fa-download"></i> Download DATA
+                        </a>
+                    </div>
                 </div>
             </div> 
 
@@ -2924,9 +2909,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/race-max-pro/race-max-pro-mod_2.9.3-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/race-max-pro/race-max-pro-mod_2.9.3-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div> 
 
@@ -2946,9 +2933,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/rally-race-pro-3-0-car-racing/Rally-Racing-Pro-3.0-v1.6-mod-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/rally-race-pro-3-0-car-racing/Rally-Racing-Pro-3.0-v1.6-mod-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -2968,9 +2957,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/the-dark-knight-rises/the-dark-knight-rises-1.1.6b-mod-apkvision.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/the-dark-knight-rises/the-dark-knight-rises-1.1.6b-mod-apkvision.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
        
@@ -2990,9 +2981,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://dl.apkvision.org/the-amazing-spider-man/Spider-Man-HD-v1-2-3e-mod.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/the-amazing-spider-man/Spider-Man-HD-v1-2-3e-mod.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -3012,9 +3005,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://files.an1.net/resident-evil-4-mod_1.0-an1.com.apk" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://files.an1.net/resident-evil-4-mod_1.0-an1.com.apk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div> 
 
@@ -3034,9 +3029,11 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/au5kfa97dlo81mj/DEAD-EFFECT2-MOD-APK+DATA-2022.zip/file" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/au5kfa97dlo81mj/DEAD-EFFECT2-MOD-APK+DATA-2022.zip/file" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div> 
        
@@ -3056,22 +3053,24 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file?dkey=rbyt52anm9g&r=1504 " class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/ycxkoqne89x35zh/FIFA_16_OBB_BY_ALPHATRIX_GAMING.zip/file?dkey=mf0w05f23vz&r=1010" class="download-btn">
-                        <i class="fas fa-download"></i> Download OBB
-                    </a>
-                    
-                    <a href="https://www.mediafire.com/file/k5npz77stjwiccm/NEW+FC26+THEME+LATEST+DB+FIFA+16+MOD+FULL+TOURNAMENTS+BY+ALPHATRIX+GAMING.zip/file?dkey=4l2egvww80u&r=1575" class="download-btn">
-                        <i class="fas fa-download"></i> Download DATA
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file?dkey=rbyt52anm9g&r=1504 " class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/ycxkoqne89x35zh/FIFA_16_OBB_BY_ALPHATRIX_GAMING.zip/file?dkey=mf0w05f23vz&r=1010" class="download-btn">
+                            <i class="fas fa-download"></i> Download OBB
+                        </a>
+                        
+                        <a href="https://www.mediafire.com/file/k5npz77stjwiccm/NEW+FC26+THEME+LATEST+DB+FIFA+16+MOD+FULL+TOURNAMENTS+BY+ALPHATRIX+GAMING.zip/file?dkey=4l2egvww80u&r=1575" class="download-btn">
+                            <i class="fas fa-download"></i> Download DATA
+                        </a>
+                    </div>
                 </div>
             </div> 
-        </div>
-        <!-- Game Card: battleops -->
-            <div class="game-card" data-category="free" data-game="hitman Sniper">
+
+            <!-- Game Card: Hitman Sniper -->
+            <div class="game-card" data-category="free" data-game="Hitman Sniper">
                 <div class="game-badge badge-free">Free</div>
                 <img src="hitman .jpeg" alt="Hitman Sniper" class="game-image">
                 <div class="game-info">
@@ -3086,58 +3085,87 @@
                         <div></div>
                     </div>
                     
-                    <a href="https://files.an1.co/hitman-sniper-mod_1.20.7-an1.com.apk. " class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://files.an1.co/hitman-sniper-mod_1.20.7-an1.com.apk. " class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <!-- Game Card: battleops -->
-            <div class="game-card" data-category="free" data-game="Truck Simulator ">
-                <div class="game-badge badge-free">Truck Simulator </div>
+            <!-- Game Card: Truck Simulator -->
+            <div class="game-card" data-category="free" data-game="Truck Simulator">
+                <div class="game-badge badge-free">Free</div>
                 <img src="truck.jpeg" alt="Truck Simulator" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Truck Simulator</h3>
-                    <p class="game-description"></p>
+                    <p class="game-description">Realistic truck driving simulation</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
                             <i class="fas fa-star"></i>
                             <span>4.6</span>
                         </div>
-                   </div>
-                        </div>
+                        <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/gduwnc7z34ziynw/American_Truck_Simulator_Opti.7z/file?dkey=20a5188rrju&r=844" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/gduwnc7z34ziynw/American_Truck_Simulator_Opti.7z/file?dkey=20a5188rrju&r=844" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
-         </div>
-      </div>
-             <!-- Game Card: battleops -->
-            <div class="game-card" data-category="free" data-game="WWE PATCH 2026 PSP ">
-                <div class="game-badge badge-free">WWE PATCH 2026 PSP</div>
+            
+            <!-- Game Card: WWE PATCH 2026 PSP -->
+            <div class="game-card" data-category="free" data-game="WWE PATCH 2026 PSP">
+                <div class="game-badge badge-free">Free</div>
                 <img src="wwe patch.jpeg" alt="WWE PATCH 2026" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">WWE PATCH 2026</h3>
-                    <p class="game-description"></p>
+                    <p class="game-description">Latest WWE patch for PSP with updated roster</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
                             <i class="fas fa-star"></i>
                             <span>4.6</span>
                         </div>
-                   </div>
-                        </div>
+                        <div></div>
                     </div>
                     
-                    <a href="https://www.mediafire.com/file/cnojs7lrthl1ukb/MY_NEW_WWE_2K26_PATCH_MOD_BY_LETSKI_MODDER.zip/file?dkey=wl4jd7u9ewl&r=67" class="download-btn">
-                        <i class="fas fa-download"></i> Download Apk 
-                    </a>
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/cnojs7lrthl1ukb/MY_NEW_WWE_2K26_PATCH_MOD_BY_LETSKI_MODDER.zip/file?dkey=wl4jd7u9ewl&r=67" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Game Card: Truck Simulator -->
+            <div class="game-card" data-category="free" data-game="UFL MOBILE">
+                <div class="game-badge badge-free">Free</div>
+                <img src="us.jpeg" alt="UFL MOBIE" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">UFL MOBILE</h3>
+                    <p class="game-description">Realistic game of all time with all kits💥💥</p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="download-buttons-container">
+                        <a href="https://d.apkpure.com/b/XAPK/com.xten.ufl?version=latest" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
    
     <!-- About Us Page -->
@@ -3261,7 +3289,7 @@
 
     <!-- Floating Controls -->
     <div class="floating-controls">
-        <button class="control-btn assistant" id="assistant-btn" title="Game "Game Assistant">
+        <button class="control-btn assistant" id="assistant-btn" title="Game Assistant">
             <i class="fas fa-robot"></i>
         </button>
         <button class="control-btn" id="theme-btn" title="Toggle Dark/Light Mode">
@@ -3618,127 +3646,19 @@ Download now and start playing! 🚀
             trendingSlider.style.animationPlayState = 'running';
         });
 
-        // 14. All Games Collection Feature
-        const allGamesList = document.getElementById('all-games-list');
-        const viewAllGamesBtn = document.getElementById('view-all-games');
-        const filterFreeGamesBtn = document.getElementById('filter-free-games');
-        const filterPremiumGamesBtn = document.getElementById('filter-premium-games');
-
-        // Collect all games from the page
-        function populateAllGamesList() {
-            const games = [];
-            
-            // Get all game cards except the collection card itself
-            document.querySelectorAll('.game-card:not([data-game="All Games Collection"])').forEach(card => {
-                const gameName = card.getAttribute('data-game');
-                const category = card.getAttribute('data-category');
-                const rating = card.querySelector('.game-rating span')?.textContent || '4.5';
-                
-                games.push({
-                    name: gameName,
-                    category: category,
-                    rating: rating
-                });
-            });
-            
-            // Sort games alphabetically
-            games.sort((a, b) => a.name.localeCompare(b.name));
-            
-            // Populate the list
-            allGamesList.innerHTML = '';
-            games.forEach(game => {
-                const gameItem = document.createElement('div');
-                gameItem.className = 'game-item';
-                gameItem.innerHTML = `
-                    <span class="game-item-name">${game.name}</span>
-                    <span class="game-item-category ${game.category === 'premium' ? 'game-item-premium' : ''}">
-                        ${game.category === 'premium' ? 'Premium' : 'Free'}
-                    </span>
-                `;
-                
-                gameItem.addEventListener('click', () => {
-                    // Find and scroll to the game card
-                    const targetCard = document.querySelector(`.game-card[data-game="${game.name}"]`);
-                    if (targetCard) {
-                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        targetCard.style.animation = 'pulse 0.5s';
-                        setTimeout(() => {
-                            targetCard.style.animation = '';
-                        }, 500);
-                        showNotification(`Navigated to ${game.name} 🎯`);
-                    }
-                });
-                
-                allGamesList.appendChild(gameItem);
-            });
-        }
-
-        // Initialize the games list
-        populateAllGamesList();
-
-        // Collection card button functionality
-        viewAllGamesBtn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-            
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.style.display = 'block';
-                card.style.animation = 'fadeInUp 0.5s ease forwards';
-            });
-            
-            showNotification('Showing all games! 🎮');
-            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
-        });
-
-        filterFreeGamesBtn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="free"]').classList.add('active');
-            
-            document.querySelectorAll('.game-card').forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (category === 'free') {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            showNotification('Showing free games only! 🎁');
-            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
-        });
-
-        filterPremiumGamesBtn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="premium"]').classList.add('active');
-            
-            document.querySelectorAll('.game-card').forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (category === 'premium') {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            showNotification('Showing premium games only! 👑');
-            window.scrollTo({ top: document.getElementById('games-section').offsetTop, behavior: 'smooth' });
-        });
-
-        // 15. Initialize game cards with staggered animations
+        // 14. Initialize game cards with staggered animations
         document.querySelectorAll('.game-card').forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
         });
 
-        // 16. Contact number click
+        // 15. Contact number click
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.addEventListener('click', () => {
                 showNotification('Calling support: 0742838904 📞');
             });
         });
 
-        // 17. Download button tracking
+        // 16. Download button tracking
         document.querySelectorAll('.download-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 const gameName = this.closest('.game-card')?.getAttribute('data-game') || 'Unknown Game';
@@ -3755,7 +3675,7 @@ Download now and start playing! 🚀
             });
         });
 
-        // 18. Trending items click
+        // 17. Trending items click
         document.querySelectorAll('.trending-item').forEach(item => {
             item.addEventListener('click', function() {
                 const gameName = this.getAttribute('data-game');
@@ -3771,7 +3691,7 @@ Download now and start playing! 🚀
             });
         });
 
-        // 19. Game assistant recommendations
+        // 18. Game assistant recommendations
         document.querySelectorAll('.recommendation-item').forEach(item => {
             item.addEventListener('click', function() {
                 const gameName = this.getAttribute('data-game');
@@ -3788,10 +3708,10 @@ Download now and start playing! 🚀
             });
         });
 
-        // 20. Initialize with welcome notification
+        // 19. Initialize with welcome notification
         setTimeout(() => {
             showNotification('Welcome to Games-Store! Browse our collection of 50+ games! 🎮');
         }, 1500);
     </script>
 </body>
-</html> 
+</html>
