@@ -511,6 +511,10 @@
 
         .game-info {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            min-height: 280px;
         }
 
         .game-title {
@@ -525,8 +529,10 @@
 
         .game-description {
             color: #b0b0b0;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-size: 0.9rem;
+            flex-grow: 1;
+            min-height: 60px;
         }
 
         body.light-mode .game-description {
@@ -536,7 +542,7 @@
         .game-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-size: 0.9rem;
             color: #8a8fa3;
         }
@@ -555,7 +561,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .price {
@@ -575,7 +581,7 @@
             display: inline-block;
             background: linear-gradient(90deg, #6c5ce7, #a29bfe);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 0.5rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
@@ -583,11 +589,20 @@
             width: 100%;
             text-align: center;
             margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            word-wrap: break-word;
         }
 
         .download-btn:hover {
             background: linear-gradient(90deg, #5b4bc4, #8a7ff0);
             box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .download-buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: auto;
         }
 
         /* Light Mode Styles */
@@ -791,30 +806,6 @@
         }
 
         /* All Games Collection Styles - REMOVED */
-
-        /* Enhanced Shiny Black Game Cards - FIXED STRUCTURE */
-        .game-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            min-height: 220px;
-        }
-
-        .game-description {
-            color: #b0b0b0;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            flex-grow: 1;
-            min-height: 60px;
-        }
-
-        .download-buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
 
         /* Existing styles below... */
         /* Header Styles */
@@ -1177,7 +1168,7 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
         }
 
@@ -1423,8 +1414,14 @@
                 right: 15px;
             }
 
-            .download-buttons-container {
-                flex-direction: column;
+            .download-btn {
+                font-size: 0.8rem;
+                padding: 0.7rem 0.5rem;
+            }
+            
+            .game-info {
+                min-height: 250px;
+                padding: 1.2rem;
             }
         }
     </style>
@@ -1575,11 +1572,11 @@
                         <option value="Efootball 2026">Efootball 2026 Psp</option>
                         <option value="Wild Blood">Wild Blood</option>
                         <option value="Watch Dogs">Watch Dogs</option>
-                        <option value="UNBROKEN:Survival ">UNBROKEN:Survival </option>
-                        <option value="DLS 26 ">DLS 26 </option>
+                        <option value="UNBROKEN:Survival ">UNBROKEN:Survival</option>
+                        <option value="DLS 26 ">DLS 26</option>
                         <option value="Fire-Apocalypse-zombie">Fire-Apocalypse-zombie</option>
                         <option value="DLS 2026 MOD 19 Apk">DLS 2026 MOD 19 Apk</option>
-                        <option value="Call of duty black ops ">Call of duty black ops </option>
+                        <option value="Call of duty black ops ">Call of duty black ops</option>
                         <option value="Blur">Blur</option>
                         <option value="Downhill Domination ">Downhill Domination</option>
                         <option value="FIFA Orginal">FIFA Orginal</option>
@@ -1587,15 +1584,14 @@
                         <option value="GRAND THEFT AUTO 5 MOBILE LITE">GRAND THEFT AUTO 5 MOBILE LITE</option>
                         <option value="FIFA 16 MOD EFOOTBALL">FIFA 16 MOD EFOOTBALL</option>
                         <option value="FIFA 16 MOD EFOOTBALL 2026 ">FIFA 16 MOD EFOOTBALL 2026</option>
-                        <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
+                        <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY)</option>
                         <option value="GRAND THEFT AUTO V.3.1">GRAND THEFT AUTO V.3.1</option>
                         <option value="FIFA 16 MOD EAFC26">FIFA 16 MOD EAFC26</option>
                         <option value="FIFA 16 MOD FIFA 25(UFL)">FIFA 16 MOD FIFA 25(UFL)</option>
                         <option value="FC26 OFFLINE GAME ">FC26 OFFLINE GAME</option>
                         <option value="MORTAL KOMBAT(AETHERSX2)EMULATOR">MORTAL KOMBAT(AETHERSX2)EMULATOR</option>
                         <option value="MK(MORTAL KOMBAT)PSP">MK(MORTAL KOMBAT)PSP</option>
-                        <option value="FTS 26 ">FTS 26 </option>
-                        <option value="DLS 2026(UNLIMITED MONEY ) ">DLS 2026(UNLIMITED MONEY )</option>
+                        <option value="FTS 26 ">FTS 26</option>
                         <option value="Prince Of Persia ">Prince Of Persia</option>
                         <option value="NEED FOR SPEED ">NEED FOR SPEED</option>
                         <option value="GTA IV ">GTA IV</option>
@@ -1603,20 +1599,20 @@
                         <option value="Call Of Duty:Strike Team">Call Of Duty:Strike Team</option>
                         <option value="Once a Human">Once a Human</option>
                         <option value="battleops ">battleops</option>
-                        <option value="EFOOTBALL 2026">EFOOTBALL 2026 </option>
-                        <option value="FIFA 2025 MOD 14">FIFA 2025 MOD 14 </option>
-                        <option value="RALLY RACING PRO">RALLY RACING PRO </option>
-                        <option value="RACE MAX PRO">RACE MAX PRO </option>
-                        <option value="BATMAN">BATMAN </option>
-                        <option value="SPIDERMAN">SPIDERMAN </option>
+                        <option value="EFOOTBALL 2026">EFOOTBALL 2026</option>
+                        <option value="FIFA 2025 MOD 14">FIFA 2025 MOD 14</option>
+                        <option value="RALLY RACING PRO">RALLY RACING PRO</option>
+                        <option value="RACE MAX PRO">RACE MAX PRO</option>
+                        <option value="BATMAN">BATMAN</option>
+                        <option value="SPIDERMAN">SPIDERMAN</option>
                         <option value="RESIDENT EVIL MOD APK">RESIDENT EVIL MOD APK</option>
-                        <option value="DEAD EFFECT">DEAD EFFECT </option>
+                        <option value="DEAD EFFECT">DEAD EFFECT</option>
                         <option value="Hitman Sniper">Hitman Sniper</option>
-                        <option value="Truck Simulator">Truck Simulator </option>
+                        <option value="Truck Simulator">Truck Simulator</option>
                         <option value="WWE PATCH 2026 PSP">WWE PATCH 2026 PSP</option>
                         <option value="GTA V MOD 2">GTA V MOD 2</option>
                         <option value="Fc26">Fc26</option>
-                        value="UFL MOBILE">UFL MOBILE</option>
+                        <option value="UFL MOBILE">UFL MOBILE</option>
                     </select>
                     <button id="generate-link">
                         Generate Link
@@ -1666,26 +1662,23 @@
                     <h3 class="game-title">GTA V Mod San Andreas</h3>
                     <p class="game-description">Open world game with high quality graphics.</p>
                     
-                    <div class="premium-price">
-                        <div></div>
+                    <div class="game-meta">
                         <div class="game-rating">
                             <i class="fas fa-star"></i>
                             <span>4.8</span>
                         </div>
+                        <div></div>
                     </div>
                     
                     <div class="download-buttons-container">
-                        <!-- Primary Download Button -->
                         <a href="https://www.mediafire.com/file/dlsjqcr5vscamm7/Mali-GTA_v_style_graphics.7z/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Mali-GTA_V
                         </a>
                         
-                        <!-- Additional Download Button 1 -->
                         <a href="https://www.mediafire.com/file/4kvv2569snq7a4v/Aderno-GTA_V_style_graphics.7z/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Aderno-GTA_V
                         </a>
                         
-                        <!-- Additional Download Button 2 -->
                         <a href="https://www.mediafire.com/file/nc1kzihgvociv8t/Power_Vr-GTA_V_style_Graphics.7z/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Power_Vr_Gta V 
                         </a>
@@ -1734,17 +1727,14 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <!-- Primary Download Button -->
-                        <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file " class="download-btn">
+                        <a href="https://www.mediafire.com/file/w4gemj9sdq5ywr6/DFL+2025+Mod+-+RisTechy.com.apk/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Apk
                         </a>
                         
-                        <!-- Additional Download Button 1 -->
                         <a href="https://www.mediafire.com/file/k4oe3jpzzynh8dt/Data+DFL+2025+Mod+FIFA+16+V4.0+-+RisTechy.com.rar/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Data
                         </a>
                         
-                        <!-- Additional Download Button 2 -->
                         <a href="https://www.mediafire.com/file/myt46inwwr9fnr4/Obb_FIFA_2016_Ultimate_Team_-+RisTechy.com.rar/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Obb 
                         </a>
@@ -1776,13 +1766,13 @@
                 </div>
             </div>
 
-            <!-- Game Card 5 - Free -->
-            <div class="game-card" data-category="free" data-game="UFL">
-                <div class="game-badge badge-premium">Premium </div>
+            <!-- Game Card 5 - Premium -->
+            <div class="game-card" data-category="premium" data-game="UFL">
+                <div class="game-badge badge-premium">Premium</div>
                 <img src="UFL.jpg" alt="UFL" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">UFL</h3>
-                    <p class="game-description">The best football game Ever in this world with high graphics .</p>
+                    <p class="game-description">The best football game ever with high graphics.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -1796,11 +1786,9 @@
                         <a href="https://modsfire.com/H31K0FijdpIjk72" class="download-btn">
                             <i class="fas fa-download"></i> Download Apk
                         </a>
-                        <!-- Additional Download Button 1 -->
                         <a href="https://www.mediafire.com/file/s8oy302eupsdbyd/Data.7z/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Data
                         </a>
-                        <!-- Additional Download Button 2 -->
                         <a href="https://modsfire.com/3NV9qrimEkA12uk" class="download-btn">
                             <i class="fas fa-download"></i> Download Obb 
                         </a>
@@ -1838,7 +1826,7 @@
                 <img src="Maleo .jpg" alt="Maleo mod tz" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Maleo Mod TZ</h3>
-                    <p class="game-description">Bus mod with Tz traffic and map with high quality .</p>
+                    <p class="game-description">Bus mod with Tz traffic and map with high quality.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -1881,12 +1869,12 @@
             </div>
 
             <!-- Game Card 9 - Free -->
-            <div class="game-card" data-category="free" data-game="God of war ">
+            <div class="game-card" data-category="free" data-game="God of war">
                 <div class="game-badge badge-free">Free</div>
-                <img src="God of war .jpeg" alt="God Of War " class="game-image">
+                <img src="God of war .jpeg" alt="God Of War" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">God of war</h3>
-                    <p class="game-description">God of war ghost of sparta good game with high quality .</p>
+                    <p class="game-description">God of war ghost of sparta good game with high quality.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -1905,12 +1893,12 @@
             </div>
                     
             <!-- Game Card 10 - Free -->
-            <div class="game-card" data-category="free" data-game="Spiderman 3 PSP ">
+            <div class="game-card" data-category="free" data-game="Spiderman 3 PSP">
                 <div class="game-badge badge-free">Free</div>
-                <img src="Spiderman .jpg" alt="Spiderman " class="game-image">
+                <img src="Spiderman .jpg" alt="Spiderman" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Spiderman 3 PSP</h3>
-                    <p class="game-description">spider man the best open world game af all time .</p>
+                    <p class="game-description">Spider man the best open world game of all time.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -1931,9 +1919,9 @@
             <!-- Game Card 11 - Free -->
             <div class="game-card" data-category="free" data-game="FC26 PSP">
                 <div class="game-badge badge-free">Free</div>
-                <img src="FC 26.jpg" alt="FC26 " class="game-image">
+                <img src="FC 26.jpg" alt="FC26" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">FC26 PSP </h3>
+                    <h3 class="game-title">FC26 PSP</h3>
                     <p class="game-description">Football game with realistic players and kits with u graphics and challenges.</p>
                     
                     <div class="game-meta">
@@ -1945,12 +1933,10 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <!-- Primary Download Button -->
-                        <a href="https://www.mediafire.com/file/b28wxpq0v0wvgwv/BETEGAMING_EA_FC_26_PSP_ISO.rar/file?dkey=96xi9k92rrq&r=1637 " class="download-btn">
+                        <a href="https://www.mediafire.com/file/b28wxpq0v0wvgwv/BETEGAMING_EA_FC_26_PSP_ISO.rar/file?dkey=96xi9k92rrq&r=1637" class="download-btn">
                             <i class="fas fa-download"></i> Download Game File
                         </a>
                         
-                        <!-- Additional Download Button 1 -->
                         <a href="https://www.mediafire.com/file/urpvd4wrat7jtb5/EA_FC_26_TEXTURES_%252B_SAVEDATA_BETEGAMING.rar/file?dkey=1yigpank1k8&r=311" class="download-btn">
                             <i class="fas fa-download"></i> Download TEXTURE & SAVEDATA
                         </a>
@@ -1975,17 +1961,14 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <!-- Primary Download Button -->
-                        <a href=" https://www.mediafire.com/file/lpebs6fvcxu0t3o/EA+FC+MOD+26+BY+ZEOL.apk/file?dkey=nfuqi21t5my&r=1541" class="download-btn">
+                        <a href="https://www.mediafire.com/file/lpebs6fvcxu0t3o/EA+FC+MOD+26+BY+ZEOL.apk/file?dkey=nfuqi21t5my&r=1541" class="download-btn">
                             <i class="fas fa-download"></i> Download Apk
                         </a>
                         
-                        <!-- Additional Download Button 1 -->
                         <a href="https://www.mediafire.com/file/hoi41hkopi3bela/data.rar/file?dkey=ya71q54ucso&r=889" class="download-btn">
                             <i class="fas fa-download"></i> Download Data
                         </a>
                         
-                        <!-- Additional Download Button 2 -->
                         <a href="https://www.mediafire.com/file/cyqmrxukdb0xw85/obb.rar/file?dkey=q70zjgb43ab&r=1466" class="download-btn">
                             <i class="fas fa-download"></i> Download Obb 
                         </a>
@@ -1996,7 +1979,7 @@
             <!-- Game Card 13 - Free -->
             <div class="game-card" data-category="free" data-game="Carnage Wars">
                 <div class="game-badge badge-free">Free</div>
-                <img src="Carnage wars .png" alt="Carnage Wars " class="game-image">
+                <img src="Carnage wars .png" alt="Carnage Wars" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Carnage Wars</h3>
                     <p class="game-description">The best open world game of all time.</p>
@@ -2010,7 +1993,7 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://play.google.com/store/apps/details%3Fid%3Dcom.ziczac.shooter%26hl%3Den%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Dcarnage%2Bwars%2Bplaystore%2Bgame%2Blink%26pcampaignid%3DAPPU_1_f0QraaSYHLm9ptQPqqGlCQ&ved=2ahUKEwjk08evh5iRAxW5nokEHapQKQEQ5YQBegQIDhAC&sqi=2&usg=AOvVaw0un12m-ankzdPDTbjTxMJj" class="download-btn">
+                        <a href="https://play.google.com/store/apps/details?id=com.ziczac.shooter&hl=en&referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dcarnage%2Bwars%2Bplaystore%2Bgame%2Blink&pcampaignid=APPU_1_f0QraaSYHLm9ptQPqqGlCQ" class="download-btn">
                             <i class="fas fa-download"></i> Download Now
                         </a>
                     </div>
@@ -2018,11 +2001,11 @@
             </div>
             
             <!-- Game Card 14 - Free -->
-            <div class="game-card" data-category="free" data-game="Red Dead Redemption ">
+            <div class="game-card" data-category="free" data-game="Red Dead Redemption">
                 <div class="game-badge badge-free">Free</div>
-                <img src="Red dead redemption .jpg" alt="Red Dead Redemption " class="game-image">
+                <img src="Red dead redemption .jpg" alt="Red Dead Redemption" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">READ DEAD REDEMPTION </h3>
+                    <h3 class="game-title">READ DEAD REDEMPTION</h3>
                     <p class="game-description">The best open world game of all time.</p>
                     
                     <div class="game-meta">
@@ -2046,7 +2029,7 @@
                 <div class="game-badge badge-free">Free</div>
                 <img src="Chanyo .jpg" alt="European front" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">European front </h3>
+                    <h3 class="game-title">European front</h3>
                     <p class="game-description">Action game</p>
                     
                     <div class="game-meta">
@@ -2066,11 +2049,11 @@
             </div>
             
             <!-- Game Card: Unbroken:Survival -->
-            <div class="game-card" data-category="free" data-game="Unbroken:Survival ">
+            <div class="game-card" data-category="free" data-game="Unbroken:Survival">
                 <div class="game-badge badge-free">Free</div>
                 <img src="unbroken .jpeg" alt="Unbroken:Survival" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">UNBROKEN:Survival </h3>
+                    <h3 class="game-title">UNBROKEN:Survival</h3>
                     <p class="game-description">Action game</p>
                     
                     <div class="game-meta">
@@ -2095,7 +2078,7 @@
                 <img src="Efootball 2026 .jpg" alt="Efootball 2026" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Efootball 2026 Psp</h3>
-                    <p class="game-description">Beautiful game with high graphics and challenges .</p>
+                    <p class="game-description">Beautiful game with high graphics and challenges.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2198,7 +2181,7 @@
                 <div class="game-badge badge-free">Free</div>
                 <img src="wwe.jpeg" alt="wwe" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">WWE </h3>
+                    <h3 class="game-title">WWE</h3>
                     <p class="game-description">Action game.</p>
                     
                     <div class="game-meta">
@@ -2279,7 +2262,7 @@
                 <img src="brul.jpg" alt="brul" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Blur</h3>
-                    <p class="game-description">RACING .</p>
+                    <p class="game-description">RACING.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2343,7 +2326,7 @@
                 <img src="FIFA_16_cover.jpg" alt="FIFA Original" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">FIFA Original</h3>
-                    <p class="game-description">Football </p>
+                    <p class="game-description">Football</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2358,7 +2341,7 @@
                             <i class="fas fa-download"></i> Download Apk
                         </a>
                         
-                        <a href="https://modsfire.com/download/01PrwKBnSP670R3/cb4e9 " class="download-btn">
+                        <a href="https://modsfire.com/download/01PrwKBnSP670R3/cb4e9" class="download-btn">
                             <i class="fas fa-download"></i> Download Data
                         </a>
                         
@@ -2383,7 +2366,7 @@
                 <img src="Mod.jpg" alt="GRAND THEFT AUTO 5 MOBILE LITE" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">GRAND THEFT AUTO MOBILE LITE</h3>
-                    <p class="game-description">Open world .</p>
+                    <p class="game-description">Open world.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2402,12 +2385,12 @@
             </div>
 
             <!-- Game Card: FIFA 16 MOD EFOOTBALL -->
-            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EFOOTBALL ">
+            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EFOOTBALL">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Untitled-Project-35-1024x576.jpg.webp" alt="FIFA 16 MOD EFOOTBALL" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">FIFA 16 MOD EFOOTBALL </h3>
-                    <p class="game-description">Football .</p>
+                    <h3 class="game-title">FIFA 16 MOD EFOOTBALL</h3>
+                    <p class="game-description">Football.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2438,12 +2421,12 @@
             </div>
 
             <!-- Game Card: FIFA 16 MOD EFOOTBALL 2026 -->
-            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EFOOTBALL 2026 ">
+            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EFOOTBALL 2026">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Untitled-Project-9-6-1024x576.jpg.webp" alt="FIFA 16 MOD EFOOTBALL 2026" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">FIFA 16 MOD EFOOTBALL 2026 (PES 26)</h3>
-                    <p class="game-description">FOOTBALL .</p>
+                    <p class="game-description">FOOTBALL.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2465,12 +2448,12 @@
                 </div>
             </div>
 
-            <!-- Game Card: DLS 2026(UNLIMITED MONEY )-->
-            <div class="game-card" data-category="free" data-game="DLS 2026(UNLIMITED MONEY ) ">
+            <!-- Game Card: DLS 2026(UNLIMITED MONEY)-->
+            <div class="game-card" data-category="free" data-game="DLS 2026(UNLIMITED MONEY)">
                 <div class="game-badge badge-free">Free</div>
                 <img src="dls.jpeg" alt="DLS" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">DLS 2026(UNLIMITED MONEY )</h3>
+                    <h3 class="game-title">DLS 2026(UNLIMITED MONEY)</h3>
                     <p class="game-description">FOOTBALL GAME.</p>
                     
                     <div class="game-meta">
@@ -2490,12 +2473,12 @@
             </div>
 
             <!-- Game Card: FIFA 16 MOD EAFC26 -->
-            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EAFC26 ">
+            <div class="game-card" data-category="free" data-game="FIFA 16 MOD EAFC26">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Untitled-Project-11-6-1024x576.jpg.webp" alt="FIFA 16 MOD EAFC26" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">FIFA 16 MOD EAFC26</h3>
-                    <p class="game-description">FOOTBALL .</p>
+                    <p class="game-description">FOOTBALL.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2526,12 +2509,12 @@
             </div>
 
             <!-- Game Card: FIFA 16 MOD FIFA 25(UFL) -->
-            <div class="game-card" data-category="free" data-game="FIFA 16 MOD FIFA 25(UFL) ">
+            <div class="game-card" data-category="free" data-game="FIFA 16 MOD FIFA 25(UFL)">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Untitled-Project-29-780x440.jpg.webp" alt="FIFA 16 MOD FIFA 25(UFL)" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">FIFA 16 MOD FIFA 25(UFL)</h3>
-                    <p class="game-description">FOOTBALL .</p>
+                    <p class="game-description">FOOTBALL.</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2586,7 +2569,7 @@
             </div>
 
             <!-- Game Card: FC26 OFFLINE GAME -->
-            <div class="game-card" data-category="free" data-game="FC26 OFFLINE GAME ">
+            <div class="game-card" data-category="free" data-game="FC26 OFFLINE GAME">
                 <div class="game-badge badge-free">Free</div>
                 <img src="fc.jpeg" alt="FC26 OFFLINE GAME" class="game-image">
                 <div class="game-info">
@@ -2642,7 +2625,7 @@
             </div>
 
             <!-- Game Card: MORTAL KOMBAT(AETHERSX2)EMULATOR -->
-            <div class="game-card" data-category="free" data-game="MORTAL KOMBAT(AETHERSX2)EMULATOR ">
+            <div class="game-card" data-category="free" data-game="MORTAL KOMBAT(AETHERSX2)EMULATOR">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Mortal kombat .jpeg" alt="MORTAL KOMBAR" class="game-image">
                 <div class="game-info">
@@ -2658,7 +2641,7 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file " class="download-btn">
+                        <a href="https://www.mediafire.com/file/par831qvb13r6mm/elkingofthemusicall%252C_Inc.rar/file" class="download-btn">
                             <i class="fas fa-download"></i> Download Game
                         </a>
                     </div>
@@ -2695,7 +2678,7 @@
                 <img src="lone.jpg" alt="Call Of Duty:Strike Team" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Call Of Duty:Strike Team</h3>
-                    <p class="game-description">Action game with high quality and graphics </p>
+                    <p class="game-description">Action game with high quality and graphics</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2750,9 +2733,9 @@
             </div>
 
             <!-- Game Card: Once a Human -->
-            <div class="game-card" data-category="free" data-game="Once a Human ">
+            <div class="game-card" data-category="free" data-game="Once a Human">
                 <div class="game-badge badge-free">Free</div>
-                <img src="once a Human .jpg" alt="Once a Human " class="game-image">
+                <img src="once a Human .jpg" alt="Once a Human" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Once a Human</h3>
                     <p class="game-description">Action Game</p>
@@ -2803,7 +2786,7 @@
                 <img src="efootball .png" alt="Efootball" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">EFOOTBALL 2026</h3>
-                    <p class="game-description">THE best football game of all time </p>
+                    <p class="game-description">THE best football game of all time</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2832,10 +2815,10 @@
             <!-- Game Card: FIFA 2025 MOD 14 -->
             <div class="game-card" data-category="free" data-game="FIFA 2025 MOD 14">
                 <div class="game-badge badge-free">Free</div>
-                <img src="FIFA-2025-Mod-14-apk-obb-data-offline-ra-sports-fc-1536x660.jpg" alt="FIFA 2025 MOD 14 " class="game-image">
+                <img src="FIFA-2025-Mod-14-apk-obb-data-offline-ra-sports-fc-1536x660.jpg" alt="FIFA 2025 MOD 14" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">FIFA 2025 MOD 14</h3>
-                    <p class="game-description">THE best football game of all time </p>
+                    <p class="game-description">THE best football game of all time</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2862,12 +2845,12 @@
             </div> 
 
             <!-- Game Card: GTA V MOD 2 -->
-            <div class="game-card" data-category="Premium" data-game="GTA V MOD 2">
+            <div class="game-card" data-category="premium" data-game="GTA V MOD 2">
                 <div class="game-badge badge-premium">Premium</div>
-                <img src="gta 5.jpeg" alt="GTA V MOD 2 " class="game-image">
+                <img src="gta 5.jpeg" alt="GTA V MOD 2" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">GTA V MOD 2</h3>
-                    <p class="game-description">GTA V MOD NEW VERSION NOW U CAN USE ALL CHARACTERS </p>
+                    <p class="game-description">GTA V MOD NEW VERSION NOW U CAN USE ALL CHARACTERS</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2894,9 +2877,9 @@
             </div> 
 
             <!-- Game Card: RACE MAX PRO -->
-            <div class="game-card" data-category="free" data-game="RACE MAX PRO ">
+            <div class="game-card" data-category="free" data-game="RACE MAX PRO">
                 <div class="game-badge badge-free">Free</div>
-                <img src="race pro.jpeg" alt=" RACE MAX PRO" class="game-image">
+                <img src="race pro.jpeg" alt="RACE MAX PRO" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">RACE MAX PRO</h3>
                     <p class="game-description">THE best RACING GAME</p>
@@ -2923,7 +2906,7 @@
                 <img src="rally .jpeg" alt="RALLY RACING PRO" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">RALLY RACING PRO</h3>
-                    <p class="game-description">THE best football game of all time </p>
+                    <p class="game-description">THE best football game of all time</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -2968,9 +2951,9 @@
             <!-- Game Card: SPIDERMAN -->
             <div class="game-card" data-category="free" data-game="SPIDERMAN">
                 <div class="game-badge badge-free">Free</div>
-                <img src="dar.jpeg" alt="SPIDERMAN " class="game-image">
+                <img src="dar.jpeg" alt="SPIDERMAN" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">SPIDERMAN </h3>
+                    <h3 class="game-title">SPIDERMAN</h3>
                     <p class="game-description">Action</p>
                     
                     <div class="game-meta">
@@ -3018,7 +3001,7 @@
                 <div class="game-badge badge-free">Free</div>
                 <img src="dead effect.jpeg" alt="DEAD EFFECT" class="game-image">
                 <div class="game-info">
-                    <h3 class="game-title">DEAD EFFECT </h3>
+                    <h3 class="game-title">DEAD EFFECT</h3>
                     <p class="game-description">THE best ACTION GAME and story game</p>
                     
                     <div class="game-meta">
@@ -3043,7 +3026,7 @@
                 <img src="wolf gang.jpg" alt="Fc26" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">Fc26</h3>
-                    <p class="game-description">THE best football game of all time </p>
+                    <p class="game-description">THE best football game of all time</p>
                     
                     <div class="game-meta">
                         <div class="game-rating">
@@ -3054,7 +3037,7 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <a href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file?dkey=rbyt52anm9g&r=1504 " class="download-btn">
+                        <a href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file?dkey=rbyt52anm9g&r=1504" class="download-btn">
                             <i class="fas fa-download"></i> Download Apk 
                         </a>
                         
@@ -3086,7 +3069,7 @@
                     </div>
                     
                     <div class="download-buttons-container">
-                        <a href="https://files.an1.co/hitman-sniper-mod_1.20.7-an1.com.apk. " class="download-btn">
+                        <a href="https://files.an1.co/hitman-sniper-mod_1.20.7-an1.com.apk" class="download-btn">
                             <i class="fas fa-download"></i> Download Apk 
                         </a>
                     </div>
@@ -3140,12 +3123,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Game Card: Truck Simulator -->
+
+            <!-- Game Card: UFL MOBILE -->
             <div class="game-card" data-category="free" data-game="UFL MOBILE">
                 <div class="game-badge badge-free">Free</div>
-                <img src="us.jpeg" alt="UFL MOBIE" class="game-image">
+                <img src="us.jpeg" alt="UFL MOBILE" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">UFL MOBILE</h3>
                     <p class="game-description">Realistic game of all time with all kits💥💥</p>
@@ -3166,6 +3148,31 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Game Card: WWE PATCH 2026 PSP -->
+            <div class="game-card" data-category="free" data-game="Takashi">
+                <div class="game-badge badge-free">Free</div>
+                <img src="takashi.jpeg" alt="Takashi" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">Takashi</h3>
+                    <p class="game-description">The best action/Adventure game of all time</p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="download-buttons-container">
+                        <a href="https://dl.apkvision.org/takashi-ninja-warrior/takashi-ninja-warrior-v2.102c.xapk" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
     </section>
    
     <!-- About Us Page -->
