@@ -474,12 +474,6 @@
             z-index: 2;
         }
 
-        .badge-premium {
-            background: linear-gradient(90deg, #ff9a00, #ff6b00);
-            color: white;
-            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.4);
-        }
-
         .badge-free {
             background: linear-gradient(90deg, #00b894, #00a085);
             color: white;
@@ -555,26 +549,6 @@
 
         .game-rating i {
             color: #ff9a00;
-        }
-
-        .premium-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ff9a00;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #8a8fa3;
-            font-size: 1rem;
-            margin-right: 10px;
         }
 
         .download-btn {
@@ -1613,6 +1587,10 @@
                         <option value="GTA V MOD 2">GTA V MOD 2</option>
                         <option value="Fc26">Fc26</option>
                         <option value="UFL MOBILE">UFL MOBILE</option>
+                        <option value="Takashi">Takashi</option>
+                        <option value="Call of duty: warzone">Call of duty: warzone</option>
+                        <option value="Minecraft">Minecraft</option>
+                        <option value="PUBG Mobile">PUBG Mobile</option>
                     </select>
                     <button id="generate-link">
                         Generate Link
@@ -1649,44 +1627,10 @@
         <div class="filter-buttons">
             <button class="filter-btn active" data-filter="all">All Games</button>
             <button class="filter-btn" data-filter="free">Free Games</button>
-            <button class="filter-btn" data-filter="premium">Premium Games</button>
         </div>
         
         <div class="games-grid">
-            <!-- ========== ORIGINAL GAME CARDS ========== -->
-            <!-- Game Card 1 - Premium -->
-            <div class="game-card" data-category="premium" data-game="GTA V Mod San Andreas">
-                <div class="game-badge badge-premium">Premium</div>
-                <img src="Grand_Theft_Auto V.jpg" alt="GTA V" class="game-image">
-                <div class="game-info">
-                    <h3 class="game-title">GTA V Mod San Andreas</h3>
-                    <p class="game-description">Open world game with high quality graphics.</p>
-                    
-                    <div class="game-meta">
-                        <div class="game-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-                        <div></div>
-                    </div>
-                    
-                    <div class="download-buttons-container">
-                        <a href="https://www.mediafire.com/file/dlsjqcr5vscamm7/Mali-GTA_v_style_graphics.7z/file" class="download-btn">
-                            <i class="fas fa-download"></i> Download Mali-GTA_V
-                        </a>
-                        
-                        <a href="https://www.mediafire.com/file/4kvv2569snq7a4v/Aderno-GTA_V_style_graphics.7z/file" class="download-btn">
-                            <i class="fas fa-download"></i> Download Aderno-GTA_V
-                        </a>
-                        
-                        <a href="https://www.mediafire.com/file/nc1kzihgvociv8t/Power_Vr-GTA_V_style_Graphics.7z/file" class="download-btn">
-                            <i class="fas fa-download"></i> Download Power_Vr_Gta V 
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Game Card 2 - Free -->
+            <!-- Game Card 1 - Free -->
             <div class="game-card" data-category="free" data-game="GTA San Andreas">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Gta San Andreas .jpeg" alt="GTA San Andreas" class="game-image">
@@ -1710,7 +1654,7 @@
                 </div>
             </div>
 
-            <!-- Game Card 3 - Free -->
+            <!-- Game Card 2 - Free -->
             <div class="game-card" data-category="free" data-game="DFL">
                 <div class="game-badge badge-free">Free</div>
                 <img src="DFL.jpg" alt="DFL" class="game-image">
@@ -1742,7 +1686,7 @@
                 </div>
             </div>
 
-            <!-- Game Card 4 - Free -->
+            <!-- Game Card 3 - Free -->
             <div class="game-card" data-category="free" data-game="Bright Memory">
                 <div class="game-badge badge-free">Free</div>
                 <img src="bright memory .jpg" alt="Bright Memory" class="game-image">
@@ -1766,9 +1710,9 @@
                 </div>
             </div>
 
-            <!-- Game Card 5 - Premium -->
-            <div class="game-card" data-category="premium" data-game="UFL">
-                <div class="game-badge badge-premium">Premium</div>
+            <!-- Game Card 4 - Free -->
+            <div class="game-card" data-category="free" data-game="UFL">
+                <div class="game-badge badge-free">Free</div>
                 <img src="UFL.jpg" alt="UFL" class="game-image">
                 <div class="game-info">
                     <h3 class="game-title">UFL</h3>
@@ -1796,7 +1740,7 @@
                 </div>
             </div>
 
-            <!-- Game Card 6 - Free -->
+            <!-- Game Card 5 - Free -->
             <div class="game-card" data-category="free" data-game="Call Of Duty">
                 <div class="game-badge badge-free">Free</div>
                 <img src="call of duty .jpg" alt="Call of Duty" class="game-image">
@@ -1820,7 +1764,7 @@
                 </div>
             </div>
         
-            <!-- Game Card 7 - Free -->
+            <!-- Game Card 6 - Free -->
             <div class="game-card" data-category="free" data-game="Maleo Mod Tz">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Maleo .jpg" alt="Maleo mod tz" class="game-image">
@@ -1844,7 +1788,7 @@
                 </div>
             </div>
 
-            <!-- Game Card 8 - Free -->
+            <!-- Game Card 7 - Free -->
             <div class="game-card" data-category="free" data-game="Tomb rider">
                 <div class="game-badge badge-free">Free</div>
                 <img src="tomb rider .jpeg" alt="Tomb raider" class="game-image">
@@ -1868,7 +1812,7 @@
                 </div>
             </div>
 
-            <!-- Game Card 9 - Free -->
+            <!-- Game Card 8 - Free -->
             <div class="game-card" data-category="free" data-game="God of war">
                 <div class="game-badge badge-free">Free</div>
                 <img src="God of war .jpeg" alt="God Of War" class="game-image">
@@ -1892,7 +1836,7 @@
                 </div>
             </div>
                     
-            <!-- Game Card 10 - Free -->
+            <!-- Game Card 9 - Free -->
             <div class="game-card" data-category="free" data-game="Spiderman 3 PSP">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Spiderman .jpg" alt="Spiderman" class="game-image">
@@ -1916,7 +1860,7 @@
                 </div>
             </div>
         
-            <!-- Game Card 11 - Free -->
+            <!-- Game Card 10 - Free -->
             <div class="game-card" data-category="free" data-game="FC26 PSP">
                 <div class="game-badge badge-free">Free</div>
                 <img src="FC 26.jpg" alt="FC26" class="game-image">
@@ -1944,7 +1888,7 @@
                 </div>
             </div>
                          
-            <!-- Game Card 12 - Free -->
+            <!-- Game Card 11 - Free -->
             <div class="game-card" data-category="free" data-game="FC26 MOD">
                 <div class="game-badge badge-free">Free</div>
                 <img src="FC mobile .jpg" alt="FC" class="game-image">
@@ -1976,7 +1920,7 @@
                 </div>
             </div> 
             
-            <!-- Game Card 13 - Free -->
+            <!-- Game Card 12 - Free -->
             <div class="game-card" data-category="free" data-game="Carnage Wars">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Carnage wars .png" alt="Carnage Wars" class="game-image">
@@ -2000,7 +1944,7 @@
                 </div>
             </div>
             
-            <!-- Game Card 14 - Free -->
+            <!-- Game Card 13 - Free -->
             <div class="game-card" data-category="free" data-game="Red Dead Redemption">
                 <div class="game-badge badge-free">Free</div>
                 <img src="Red dead redemption .jpg" alt="Red Dead Redemption" class="game-image">
@@ -2844,38 +2788,6 @@
                 </div>
             </div> 
 
-            <!-- Game Card: GTA V MOD 2 -->
-            <div class="game-card" data-category="premium" data-game="GTA V MOD 2">
-                <div class="game-badge badge-premium">Premium</div>
-                <img src="gta 5.jpeg" alt="GTA V MOD 2" class="game-image">
-                <div class="game-info">
-                    <h3 class="game-title">GTA V MOD 2</h3>
-                    <p class="game-description">GTA V MOD NEW VERSION NOW U CAN USE ALL CHARACTERS</p>
-                    
-                    <div class="game-meta">
-                        <div class="game-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.6</span>
-                        </div>
-                        <div></div>
-                    </div>
-                    
-                    <div class="download-buttons-container">
-                        <a href="https://download2388.mediafire.com/p9sp09k29ntgI16fMuQxnylDYfXMDQiV9up01ni8Is7W8C0ZATvhaFbKsggyDN6mBFeoZVG7DbMQ8Gnj8mLO6SgkVSuzFfBdspoGc_jLilL2zcqHxSBTRYig3qeCwIJe7SqUDZzGpRQXIPH2Lg_xHHLZ__N_2_yRA-p5HV7FYtDC/11jrevme34egkcd/GTA+SA+APK+2.10+PT+BR%2C+By+Ryuzaki+gamer.zip" class="download-btn">
-                            <i class="fas fa-download"></i> Download Apk
-                        </a>
-                        
-                        <a href="https://download2443.mediafire.com/mk0lc4enu3xgSrLrkRr_EgeZncxMHCugT0nm9YROq_x8JAaJZzsHEsO3KXpmkMGtYPtGSd_f6bSmsJFIxAE6ruszGag-GHHVsTLCmB4IzNaUwnxeuGKv_gSXx1xYbqR6a-3KhayzRSyg1UWI0Rs0andxwBt5q-dimIhYrkssqbtM/3pgfzy1hux8bom2/com.rockstargames.gtasa.rar" class="download-btn">
-                            <i class="fas fa-download"></i> Download OBB
-                        </a>
-                        
-                        <a href="https://download2265.mediafire.com/5egwgb213fjgFGC04PTdfdetvd-raLn-MYO726zLq0I4Z4wFTWwOySMFKPnRs6Ir0NoRc4BkClOufWEZIYNkrkFeAdMkXdpgwVjFmVx1m7PTtMpBjcmOsJjmeVeCG8vXC45By5uhSYgaKSsRFTB9xbAUB29w7UN9jSvVtCrlfbOn/isz3f4osq5sov3n/V6.2.7z" class="download-btn">
-                            <i class="fas fa-download"></i> Download DATA
-                        </a>
-                    </div>
-                </div>
-            </div> 
-
             <!-- Game Card: RACE MAX PRO -->
             <div class="game-card" data-category="free" data-game="RACE MAX PRO">
                 <div class="game-badge badge-free">Free</div>
@@ -3147,9 +3059,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Game Card: WWE PATCH 2026 PSP -->
+            
+            <!-- Game Card: Takashi -->
             <div class="game-card" data-category="free" data-game="Takashi">
                 <div class="game-badge badge-free">Free</div>
                 <img src="takashi.jpeg" alt="Takashi" class="game-image">
@@ -3172,7 +3083,79 @@
                     </div>
                 </div>
             </div>
-         </div>
+            
+            <!-- Game Card: Call of duty: warzone -->
+            <div class="game-card" data-category="free" data-game="Call of duty: warzone">
+                <div class="game-badge badge-free">Free</div>
+                <img src="warzone.jpeg" alt="Call of duty: warzone" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">Call of duty: warzone</h3>
+                    <p class="game-description">The best action/Adventure game of all time</p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="download-buttons-container">
+                        <a href="https://d.apkpure.net/b/XAPK/com.activision.callofduty.warzone?version=latest" class="download-btn">
+                            <i class="fas fa-download"></i> Download Apk 
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW GAME CARD 1: Minecraft -->
+            <div class="game-card" data-category="free" data-game="FTS">
+                <div class="game-badge badge-free">Free</div>
+                <img src="aii.jpg" alt="FTS" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">FTS</h3>
+                    <p class="game-description">Best first touch Game of all time.</p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/d8o2lfqdh4a2rrv/FTS_26_LN30_DROID_NEW_TRANSFER.zip/file?dkey=2fo8ro70v2r&r=604" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game 
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW GAME CARD 2: PUBG Mobile -->
+            <div class="game-card" data-category="free" data-game="Walking Dead">
+                <div class="game-badge badge-free">Free</div>
+                <img src="images (8).jpeg" alt="Walking Dead" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-title">Walking Dead</h3>
+                    <p class="game-description">game with hing graphics amd story.</p>
+                    
+                    <div class="game-meta">
+                        <div class="game-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="download-buttons-container">
+                        <a href="https://www.mediafire.com/file/4p9zurvkggzg77z/WD-S1-v1.20+ALL+EPISODES+UNLOCKED+MOD+BY+(AlphaTrix+Gaming).zip/file?dkey=vd1nvg0qh3n&r=1772" class="download-btn">
+                            <i class="fas fa-download"></i> Download Game
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
    
     <!-- About Us Page -->
@@ -3264,8 +3247,8 @@
             <h4 style="color: #6c5ce7; margin-bottom: 10px; font-size: 1rem;">
                 <i class="fas fa-gamepad"></i> Top Recommendations:
             </h4>
-            <div class="recommendation-item" data-game="GTA V Mod San Andreas">
-                <strong>GTA V Mod San Andreas</strong>
+            <div class="recommendation-item" data-game="GTA San Andreas">
+                <strong>GTA San Andreas</strong>
                 <p style="font-size: 0.8rem; color: #b0b0b0; margin-top: 5px;">
                     Best open-world experience with amazing graphics
                 </p>
@@ -3465,13 +3448,13 @@
 
         recommendAction.addEventListener('click', () => {
             document.querySelector('.assistant-message').textContent = 
-                "Based on your gaming history, I recommend trying GTA V Mod San Andreas for open-world action or UFL for sports!";
+                "Based on your gaming history, I recommend trying GTA San Andreas for open-world action or UFL for sports!";
             showNotification('Game recommendations updated! 🎮');
         });
 
         trendingAction.addEventListener('click', () => {
             document.querySelector('.assistant-message').textContent = 
-                "Currently trending: GTA V Mod San Andreas, UFL Football, and Call Of Duty are our most downloaded games this week!";
+                "Currently trending: GTA San Andreas, UFL Football, and Call Of Duty are our most downloaded games this week!";
             showNotification('Trending games loaded! 🔥');
         });
 
